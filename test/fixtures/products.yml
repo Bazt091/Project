@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sku: MyString
+  name: MyString
+  ean: 
+  proveder: MyString
+  category: MyString
+  subcategory: MyString
+  active: false
+
+two:
+  sku: MyString
+  name: MyString
+  ean: 
+  proveder: MyString
+  category: MyString
+  subcategory: MyString
+  active: false

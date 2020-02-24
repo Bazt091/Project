@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @info_dispatch_order.client %>
+</p>
+
+<p>
+  <strong>Client name:</strong>
+  <%= @info_dispatch_order.client_name %>
+</p>
+
+<p>
+  <strong>Client order purchase:</strong>
+  <%= @info_dispatch_order.client_order_purchase %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @info_dispatch_order.user %>
+</p>
+
+<p>
+  <strong>User name:</strong>
+  <%= @info_dispatch_order.user_name %>
+</p>
+
+<%= link_to 'Edit', edit_info_dispatch_order_path(@info_dispatch_order) %> |
+<%= link_to 'Back', info_dispatch_orders_path %>

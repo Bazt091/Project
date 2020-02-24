@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Info Dispatch Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nº</th>
+      <th>Cliente</th>
+      <th>Client order purchase</th>
+      <th>User name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @info_dispatch_orders.each do |info_dispatch_order| %>
+      <tr>
+        <td><%= info_dispatch_order.id %></td>
+        <td><%= info_dispatch_order.client_name %></td>
+        <td><%= info_dispatch_order.client_order_purchase %></td>
+        <td><%= info_dispatch_order.user_name %></td>
+        <td><%= link_to 'Show', info_dispatch_order %></td>
+        <td><%= link_to 'Edit', edit_info_dispatch_order_path(info_dispatch_order) %></td>
+        <td><%= link_to 'Destroy', info_dispatch_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Info Dispatch Order', new_info_dispatch_order_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Provider:</strong>
+  <%= @info_purchase_order.provider %>
+</p>
+
+<p>
+  <strong>Provider name:</strong>
+  <%= @info_purchase_order.provider_name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @info_purchase_order.user %>
+</p>
+
+<p>
+  <strong>User name:</strong>
+  <%= @info_purchase_order.user_name %>
+</p>
+
+<%= link_to 'Edit', edit_info_purchase_order_path(@info_purchase_order) %> |
+<%= link_to 'Back', info_purchase_orders_path %>

@@ -1,0 +1,2 @@
+module InfoPurchaseOrdersHelper
+end
