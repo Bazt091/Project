@@ -1,24 +1,21 @@
-# README
+Este proyecto tiene por objetivo aplicar los conocimientos adquiridos en el Bootcamp Full Stack.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Se presentara una aplicación web Warehouse Management System (WMS), para la administración de Supply Chain.
 
-Things you may want to cover:
+Se muestra diagrama de funcionamiento pensado para implementación.
 
-* Ruby version
+![alt text](/flowchart.png "Diagrama de Flujo")
 
-* System dependencies
+Ademas, se presenta el Modelo Lógico, en el cual se establece las funcionalidades dependiendo del usuario.
 
-* Configuration
+![alt text](/logic.png "Modelo Lógico")
 
-* Database creation
+En el siguiente tablero se presentan las historias de usuarios relacionadas al proyecto:
 
-* Database initialization
+[Tablero Trello](https://trello.com/b/J1oT49La/proyecto-final)
 
-* How to run the test suite
+Se adjunta repositorio en GitHub
 
-* Services (job queues, cache servers, search engines, etc.)
+[Respositorio](https://github.com/Bazt091/Project)
 
-* Deployment instructions
-
-* ...
+[Link a Heroku](https://sheltered-spire-20449.herokuapp.com/)
