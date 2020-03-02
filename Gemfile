@@ -50,6 +50,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'ruby-graphviz' 
   gem "rails-erd"
+  gem 'filterrific'
 end
 
 group :test do
