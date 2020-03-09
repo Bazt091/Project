@@ -15,8 +15,8 @@
   <tbody>
     <% @stock_by_locations.each do |stock_by_location| %>
       <tr>
-        <td><%= stock_by_location.locations %></td>
-        <td><%= stock_by_location.products %></td>
+        <td><%= stock_by_location.location.name %></td>
+        <td><%= stock_by_location.product.name %></td>
         <td><%= stock_by_location.product_quantity %></td>
         <td><%= link_to 'Show', stock_by_location %></td>
         <td><%= link_to 'Edit', edit_stock_by_location_path(stock_by_location) %></td>

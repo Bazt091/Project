@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_09_145237) do
+ActiveRecord::Schema.define(version: 2020_03_09_172820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,11 @@ ActiveRecord::Schema.define(version: 2020_03_09_145237) do
   create_table "clients_products", id: false, force: :cascade do |t|
     t.bigint "product_id", null: false
     t.bigint "client_id", null: false
+  end
+
+  create_table "clients_users", id: false, force: :cascade do |t|
+    t.bigint "client_id", null: false
+    t.bigint "user_id", null: false
   end
 
   create_table "details_dispatch_orders", force: :cascade do |t|
@@ -83,6 +88,11 @@ ActiveRecord::Schema.define(version: 2020_03_09_145237) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "locations_products", id: false, force: :cascade do |t|
+    t.bigint "location_id", null: false
+    t.bigint "product_id", null: false
+  end
+
   create_table "locations_stock_by_locations", id: false, force: :cascade do |t|
     t.bigint "location_id", null: false
     t.bigint "stock_by_location_id", null: false
@@ -103,6 +113,11 @@ ActiveRecord::Schema.define(version: 2020_03_09_145237) do
   create_table "products_stock_by_locations", id: false, force: :cascade do |t|
     t.bigint "product_id", null: false
     t.bigint "stock_by_location_id", null: false
+  end
+
+  create_table "products_users", id: false, force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.bigint "user_id", null: false
   end
 
   create_table "providers", force: :cascade do |t|

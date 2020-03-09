@@ -12340,3 +12340,1144 @@ Completed 200 OK in 47ms (Views: 44.9ms | ActiveRecord: 0.4ms)
   [1m[36mStockByLocation Load (0.5ms)[0m  [1m[34mSELECT  "stock_by_locations".* FROM "stock_by_locations" ORDER BY "stock_by_locations"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mStockByLocation Load (0.6ms)[0m  [1m[34mSELECT  "stock_by_locations".* FROM "stock_by_locations" ORDER BY "stock_by_locations"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mStockByLocation Load (0.5ms)[0m  [1m[34mSELECT  "stock_by_locations".* FROM "stock_by_locations" ORDER BY "stock_by_locations"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 12:50:11 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.7ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  Rendered stock_by_locations/index.html.erb within layouts/application (11.6ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `location' for #<StockByLocation:0x00007ff110660f40>
+Did you mean?  locations
+               locations=):
+    15:   <tbody>
+    16:     <% @stock_by_locations.each do |stock_by_location| %>
+    17:       <tr>
+    18:         <td><%= stock_by_location.location %></td>
+    19:         <td><%= stock_by_location.products %></td>
+    20:         <td><%= stock_by_location.product_quantity %></td>
+    21:         <td><%= link_to 'Show', stock_by_location %></td>
+  
+app/views/stock_by_locations/index.html.erb:18:in `block in _app_views_stock_by_locations_index_html_erb___429871485123753027_70336668396700'
+app/views/stock_by_locations/index.html.erb:16:in `_app_views_stock_by_locations_index_html_erb___429871485123753027_70336668396700'
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 12:51:20 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.4ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  Rendered stock_by_locations/index.html.erb within layouts/application (12.3ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 53ms (Views: 47.2ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/stock_by_locations/8/edit" for ::1 at 2020-03-09 12:51:31 -0300
+Processing by StockByLocationsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mStockByLocation Load (0.5ms)[0m  [1m[34mSELECT  "stock_by_locations".* FROM "stock_by_locations" WHERE "stock_by_locations"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stock_by_locations_controller.rb:70
+  Rendering stock_by_locations/edit.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "locations"."name", "locations"."id" FROM "locations"[0m
+  ↳ app/views/stock_by_locations/_form.html.erb:16
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "products"."name", "products"."id" FROM "products"[0m
+  ↳ app/views/stock_by_locations/_form.html.erb:21
+  Rendered stock_by_locations/_form.html.erb (6.9ms)
+  Rendered stock_by_locations/edit.html.erb within layouts/application (8.5ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 47ms (Views: 40.8ms | ActiveRecord: 1.8ms)
+
+
+Started PATCH "/stock_by_locations/8" for ::1 at 2020-03-09 12:51:46 -0300
+Processing by StockByLocationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FXgjb+57qqmyfoxCrgAoaBw9wLl8GMtmzEEeS3m3MqteHjDTvu7h0n64waxEhwEux80qxLux6+7405T8hFPVsg==", "stock_by_location"=>{"location_id"=>"1", "product_id"=>"5", "product_quantity"=>"74"}, "commit"=>"Update Stock by location", "id"=>"8"}
+  [1m[36mStockByLocation Load (0.4ms)[0m  [1m[34mSELECT  "stock_by_locations".* FROM "stock_by_locations" WHERE "stock_by_locations"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stock_by_locations_controller.rb:70
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/stock_by_locations_controller.rb:47
+  [1m[36mStockByLocation Update (1.1ms)[0m  [1m[33mUPDATE "stock_by_locations" SET "location_id" = $1, "updated_at" = $2 WHERE "stock_by_locations"."id" = $3[0m  [["location_id", 1], ["updated_at", "2020-03-09 15:51:46.619918"], ["id", 8]]
+  ↳ app/controllers/stock_by_locations_controller.rb:47
+  [1m[35m (106.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/stock_by_locations_controller.rb:47
+Redirected to http://localhost:3000/stock_by_locations/8
+Completed 302 Found in 115ms (ActiveRecord: 107.7ms)
+
+
+Started GET "/stock_by_locations/8" for ::1 at 2020-03-09 12:51:46 -0300
+Processing by StockByLocationsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mStockByLocation Load (0.4ms)[0m  [1m[34mSELECT  "stock_by_locations".* FROM "stock_by_locations" WHERE "stock_by_locations"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stock_by_locations_controller.rb:70
+  Rendering stock_by_locations/show.html.erb within layouts/application
+  Rendered stock_by_locations/show.html.erb within layouts/application (5.6ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 41ms (Views: 36.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 12:51:49 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.4ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  Rendered stock_by_locations/index.html.erb within layouts/application (3.5ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 38ms (Views: 36.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 12:52:57 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.4ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  Rendered stock_by_locations/index.html.erb within layouts/application (4.6ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 62ms (Views: 60.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 12:53:22 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.4ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  Rendered stock_by_locations/index.html.erb within layouts/application (3.7ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 45ms (Views: 43.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 12:53:23 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.3ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  Rendered stock_by_locations/index.html.erb within layouts/application (3.8ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 42ms (Views: 40.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 12:54:47 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.4ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  Rendered stock_by_locations/index.html.erb within layouts/application (3.3ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 45ms (Views: 43.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 12:54:56 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.5ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  Rendered stock_by_locations/index.html.erb within layouts/application (17.4ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `location_name' for #<StockByLocation:0x00007ff1101b1d28>
+Did you mean?  location_id
+               location_id?
+               location_id=
+               location_ids
+               location_ids=):
+    15:   <tbody>
+    16:     <% @stock_by_locations.each do |stock_by_location| %>
+    17:       <tr>
+    18:         <td><%= stock_by_location.location_name %></td>
+    19:         <td><%= stock_by_location.products %></td>
+    20:         <td><%= stock_by_location.product_quantity %></td>
+    21:         <td><%= link_to 'Show', stock_by_location %></td>
+  
+app/views/stock_by_locations/index.html.erb:18:in `block in _app_views_stock_by_locations_index_html_erb___429871485123753027_70336666974300'
+app/views/stock_by_locations/index.html.erb:16:in `_app_views_stock_by_locations_index_html_erb___429871485123753027_70336666974300'
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 12:55:22 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.4ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  Rendered stock_by_locations/index.html.erb within layouts/application (2.4ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 40ms (Views: 38.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/stock_by_locations/new" for ::1 at 2020-03-09 12:55:30 -0300
+Processing by StockByLocationsController#new as HTML
+  Rendering stock_by_locations/new.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "locations"."name", "locations"."id" FROM "locations"[0m
+  ↳ app/views/stock_by_locations/_form.html.erb:16
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "products"."name", "products"."id" FROM "products"[0m
+  ↳ app/views/stock_by_locations/_form.html.erb:21
+  Rendered stock_by_locations/_form.html.erb (4.8ms)
+  Rendered stock_by_locations/new.html.erb within layouts/application (6.2ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 39ms (Views: 36.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 12:56:59 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.5ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  Rendered stock_by_locations/index.html.erb within layouts/application (6.4ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for "Location":String):
+    15:   <tbody>
+    16:     <% @stock_by_locations.each do |stock_by_location| %>
+    17:       <tr>
+    18:         <td><%= stock_by_location.locations.name.id %></td>
+    19:         <td><%= stock_by_location.products %></td>
+    20:         <td><%= stock_by_location.product_quantity %></td>
+    21:         <td><%= link_to 'Show', stock_by_location %></td>
+  
+app/views/stock_by_locations/index.html.erb:18:in `block in _app_views_stock_by_locations_index_html_erb___429871485123753027_70336661316140'
+app/views/stock_by_locations/index.html.erb:16:in `_app_views_stock_by_locations_index_html_erb___429871485123753027_70336661316140'
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 12:57:09 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.4ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" INNER JOIN "locations_stock_by_locations" ON "locations"."id" = "locations_stock_by_locations"."location_id" WHERE "locations_stock_by_locations"."stock_by_location_id" = $1 LIMIT $2[0m  [["stock_by_location_id", 8], ["LIMIT", 11]]
+  ↳ /home/bazt/.rvm/rubies/ruby-2.6.4/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered stock_by_locations/index.html.erb within layouts/application (11.1ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `name_id' for #<ActiveRecord::Associations::CollectionProxy []>
+Did you mean?  name):
+    15:   <tbody>
+    16:     <% @stock_by_locations.each do |stock_by_location| %>
+    17:       <tr>
+    18:         <td><%= stock_by_location.locations.name_id %></td>
+    19:         <td><%= stock_by_location.products %></td>
+    20:         <td><%= stock_by_location.product_quantity %></td>
+    21:         <td><%= link_to 'Show', stock_by_location %></td>
+  
+app/views/stock_by_locations/index.html.erb:18:in `block in _app_views_stock_by_locations_index_html_erb___429871485123753027_47351335419220'
+app/views/stock_by_locations/index.html.erb:16:in `_app_views_stock_by_locations_index_html_erb___429871485123753027_47351335419220'
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 12:57:33 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.4ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" INNER JOIN "locations_stock_by_locations" ON "locations"."id" = "locations_stock_by_locations"."location_id" WHERE "locations_stock_by_locations"."stock_by_location_id" = $1 LIMIT $2[0m  [["stock_by_location_id", 8], ["LIMIT", 11]]
+  ↳ /home/bazt/.rvm/rubies/ruby-2.6.4/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered stock_by_locations/index.html.erb within layouts/application (8.3ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `id_name' for #<ActiveRecord::Associations::CollectionProxy []>):
+    15:   <tbody>
+    16:     <% @stock_by_locations.each do |stock_by_location| %>
+    17:       <tr>
+    18:         <td><%= stock_by_location.locations.id_name %></td>
+    19:         <td><%= stock_by_location.products %></td>
+    20:         <td><%= stock_by_location.product_quantity %></td>
+    21:         <td><%= link_to 'Show', stock_by_location %></td>
+  
+app/views/stock_by_locations/index.html.erb:18:in `block in _app_views_stock_by_locations_index_html_erb___429871485123753027_70336667411580'
+app/views/stock_by_locations/index.html.erb:16:in `_app_views_stock_by_locations_index_html_erb___429871485123753027_70336667411580'
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 12:57:41 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.3ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" INNER JOIN "locations_stock_by_locations" ON "locations"."id" = "locations_stock_by_locations"."location_id" WHERE "locations_stock_by_locations"."stock_by_location_id" = $1 LIMIT $2[0m  [["stock_by_location_id", 8], ["LIMIT", 11]]
+  ↳ /home/bazt/.rvm/rubies/ruby-2.6.4/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered stock_by_locations/index.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<ActiveRecord::Associations::CollectionProxy []>
+Did you mean?  ids):
+    15:   <tbody>
+    16:     <% @stock_by_locations.each do |stock_by_location| %>
+    17:       <tr>
+    18:         <td><%= stock_by_location.locations.id %></td>
+    19:         <td><%= stock_by_location.products %></td>
+    20:         <td><%= stock_by_location.product_quantity %></td>
+    21:         <td><%= link_to 'Show', stock_by_location %></td>
+  
+app/views/stock_by_locations/index.html.erb:18:in `block in _app_views_stock_by_locations_index_html_erb___429871485123753027_70336644330200'
+app/views/stock_by_locations/index.html.erb:16:in `_app_views_stock_by_locations_index_html_erb___429871485123753027_70336644330200'
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 12:57:42 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.4ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" INNER JOIN "locations_stock_by_locations" ON "locations"."id" = "locations_stock_by_locations"."location_id" WHERE "locations_stock_by_locations"."stock_by_location_id" = $1 LIMIT $2[0m  [["stock_by_location_id", 8], ["LIMIT", 11]]
+  ↳ /home/bazt/.rvm/rubies/ruby-2.6.4/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered stock_by_locations/index.html.erb within layouts/application (9.1ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<ActiveRecord::Associations::CollectionProxy []>
+Did you mean?  ids):
+    15:   <tbody>
+    16:     <% @stock_by_locations.each do |stock_by_location| %>
+    17:       <tr>
+    18:         <td><%= stock_by_location.locations.id %></td>
+    19:         <td><%= stock_by_location.products %></td>
+    20:         <td><%= stock_by_location.product_quantity %></td>
+    21:         <td><%= link_to 'Show', stock_by_location %></td>
+  
+app/views/stock_by_locations/index.html.erb:18:in `block in _app_views_stock_by_locations_index_html_erb___429871485123753027_70336735058860'
+app/views/stock_by_locations/index.html.erb:16:in `_app_views_stock_by_locations_index_html_erb___429871485123753027_70336735058860'
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 12:57:46 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.4ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" INNER JOIN "locations_stock_by_locations" ON "locations"."id" = "locations_stock_by_locations"."location_id" WHERE "locations_stock_by_locations"."stock_by_location_id" = $1[0m  [["stock_by_location_id", 8]]
+  ↳ app/views/stock_by_locations/index.html.erb:18
+  Rendered stock_by_locations/index.html.erb within layouts/application (6.5ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 46ms (Views: 43.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 12:57:53 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.3ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  Rendered stock_by_locations/index.html.erb within layouts/application (3.1ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 38ms (Views: 36.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 12:58:00 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.5ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  Rendered stock_by_locations/index.html.erb within layouts/application (3.3ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 40ms (Views: 38.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 12:58:11 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.4ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  Rendered stock_by_locations/index.html.erb within layouts/application (2.7ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 61ms (Views: 59.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 12:59:40 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.5ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "locations"."name" FROM "locations" INNER JOIN "locations_stock_by_locations" ON "locations"."id" = "locations_stock_by_locations"."location_id" WHERE "locations_stock_by_locations"."stock_by_location_id" = $1[0m  [["stock_by_location_id", 8]]
+  ↳ app/views/stock_by_locations/index.html.erb:18
+  Rendered stock_by_locations/index.html.erb within layouts/application (7.3ms)
+  Rendered shared/_navbar.html.erb (2.1ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 74ms (Views: 69.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 13:00:19 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.6ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "locations"."name" FROM "locations" INNER JOIN "locations_stock_by_locations" ON "locations"."id" = "locations_stock_by_locations"."location_id" WHERE "locations_stock_by_locations"."stock_by_location_id" = $1[0m  [["stock_by_location_id", 8]]
+  ↳ app/views/stock_by_locations/index.html.erb:18
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "products"."name" FROM "products" INNER JOIN "products_stock_by_locations" ON "products"."id" = "products_stock_by_locations"."product_id" WHERE "products_stock_by_locations"."stock_by_location_id" = $1[0m  [["stock_by_location_id", 8]]
+  ↳ app/views/stock_by_locations/index.html.erb:19
+  Rendered stock_by_locations/index.html.erb within layouts/application (12.4ms)
+  Rendered shared/_navbar.html.erb (1.7ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 77ms (Views: 73.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 13:01:20 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.9ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "products"."name" FROM "products" INNER JOIN "products_stock_by_locations" ON "products"."id" = "products_stock_by_locations"."product_id" WHERE "products_stock_by_locations"."stock_by_location_id" = $1[0m  [["stock_by_location_id", 8]]
+  ↳ app/views/stock_by_locations/index.html.erb:19
+  Rendered stock_by_locations/index.html.erb within layouts/application (7.6ms)
+  Rendered shared/_navbar.html.erb (1.8ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 71ms (Views: 67.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 13:01:45 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.5ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  Rendered stock_by_locations/index.html.erb within layouts/application (22.4ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `location_name' for #<StockByLocation:0x00007ff110686f38>
+Did you mean?  location_id
+               location_id?
+               location_id=
+               location_ids
+               location_ids=):
+    15:   <tbody>
+    16:     <% @stock_by_locations.each do |stock_by_location| %>
+    17:       <tr>
+    18:         <td><%= stock_by_location.location_name %></td>
+    19:         <td><%= stock_by_location.products.pluck(:name) %></td>
+    20:         <td><%= stock_by_location.product_quantity %></td>
+    21:         <td><%= link_to 'Show', stock_by_location %></td>
+  
+app/views/stock_by_locations/index.html.erb:18:in `block in _app_views_stock_by_locations_index_html_erb___429871485123753027_70336666770980'
+app/views/stock_by_locations/index.html.erb:16:in `_app_views_stock_by_locations_index_html_erb___429871485123753027_70336666770980'
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 13:03:35 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.5ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "products"."name" FROM "products" INNER JOIN "products_stock_by_locations" ON "products"."id" = "products_stock_by_locations"."product_id" WHERE "products_stock_by_locations"."stock_by_location_id" = $1[0m  [["stock_by_location_id", 8]]
+  ↳ app/views/stock_by_locations/index.html.erb:19
+  Rendered stock_by_locations/index.html.erb within layouts/application (7.0ms)
+  Rendered shared/_navbar.html.erb (1.8ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 72ms (Views: 69.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/stock_by_locations/8/edit" for ::1 at 2020-03-09 13:03:38 -0300
+Processing by StockByLocationsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mStockByLocation Load (0.7ms)[0m  [1m[34mSELECT  "stock_by_locations".* FROM "stock_by_locations" WHERE "stock_by_locations"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stock_by_locations_controller.rb:70
+  Rendering stock_by_locations/edit.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "locations"."name", "locations"."id" FROM "locations"[0m
+  ↳ app/views/stock_by_locations/_form.html.erb:16
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "products"."name", "products"."id" FROM "products"[0m
+  ↳ app/views/stock_by_locations/_form.html.erb:21
+  Rendered stock_by_locations/_form.html.erb (10.1ms)
+  Rendered stock_by_locations/edit.html.erb within layouts/application (12.4ms)
+  Rendered shared/_navbar.html.erb (1.6ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 68ms (Views: 62.7ms | ActiveRecord: 1.8ms)
+
+
+Started PATCH "/stock_by_locations/8" for ::1 at 2020-03-09 13:03:43 -0300
+Processing by StockByLocationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mWxCOecyXi4ETQ/U1nGdbNadZHtcgTpSs8AYo6YpSWrSClGFt6cVVciLQjo89rQqDW2OBpsoGtqHUpIUW82ucw==", "stock_by_location"=>{"location_id"=>"2", "product_id"=>"5", "product_quantity"=>"74"}, "commit"=>"Update Stock by location", "id"=>"8"}
+  [1m[36mStockByLocation Load (0.6ms)[0m  [1m[34mSELECT  "stock_by_locations".* FROM "stock_by_locations" WHERE "stock_by_locations"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stock_by_locations_controller.rb:70
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/stock_by_locations_controller.rb:47
+  [1m[36mStockByLocation Update (1.6ms)[0m  [1m[33mUPDATE "stock_by_locations" SET "location_id" = $1, "updated_at" = $2 WHERE "stock_by_locations"."id" = $3[0m  [["location_id", 2], ["updated_at", "2020-03-09 16:03:43.592303"], ["id", 8]]
+  ↳ app/controllers/stock_by_locations_controller.rb:47
+  [1m[35m (104.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/stock_by_locations_controller.rb:47
+Redirected to http://localhost:3000/stock_by_locations/8
+Completed 302 Found in 116ms (ActiveRecord: 106.6ms)
+
+
+Started GET "/stock_by_locations/8" for ::1 at 2020-03-09 13:03:43 -0300
+Processing by StockByLocationsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mStockByLocation Load (0.5ms)[0m  [1m[34mSELECT  "stock_by_locations".* FROM "stock_by_locations" WHERE "stock_by_locations"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stock_by_locations_controller.rb:70
+  Rendering stock_by_locations/show.html.erb within layouts/application
+  Rendered stock_by_locations/show.html.erb within layouts/application (3.1ms)
+  Rendered shared/_navbar.html.erb (1.9ms)
+  Rendered shared/_footer.html.erb (1.0ms)
+Completed 200 OK in 62ms (Views: 58.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 13:03:46 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.5ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "products"."name" FROM "products" INNER JOIN "products_stock_by_locations" ON "products"."id" = "products_stock_by_locations"."product_id" WHERE "products_stock_by_locations"."stock_by_location_id" = $1[0m  [["stock_by_location_id", 8]]
+  ↳ app/views/stock_by_locations/index.html.erb:19
+  Rendered stock_by_locations/index.html.erb within layouts/application (6.8ms)
+  Rendered shared/_navbar.html.erb (1.7ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 68ms (Views: 64.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 13:06:11 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.6ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  Rendered stock_by_locations/index.html.erb within layouts/application (59.4ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `location' for #<StockByLocation:0x00007ff118934570>
+Did you mean?  locations
+               locations=):
+    15:   <tbody>
+    16:     <% @stock_by_locations.each do |stock_by_location| %>
+    17:       <tr>
+    18:         <td><%= stock_by_location.location.name %></td>
+    19:         <td><%= stock_by_location.product.name %></td>
+    20:         <td><%= stock_by_location.product_quantity %></td>
+    21:         <td><%= link_to 'Show', stock_by_location %></td>
+  
+app/views/stock_by_locations/index.html.erb:18:in `block in _app_views_stock_by_locations_index_html_erb___429871485123753027_70336738038760'
+app/views/stock_by_locations/index.html.erb:16:in `_app_views_stock_by_locations_index_html_erb___429871485123753027_70336738038760'
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 13:08:18 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.5ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/stock_by_locations/index.html.erb:18
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/stock_by_locations/index.html.erb:19
+  Rendered stock_by_locations/index.html.erb within layouts/application (73.9ms)
+  Rendered shared/_navbar.html.erb (2.4ms)
+  Rendered shared/_footer.html.erb (1.0ms)
+Completed 200 OK in 197ms (Views: 165.3ms | ActiveRecord: 18.0ms)
+
+
+Started GET "/stock_by_locations/new" for ::1 at 2020-03-09 13:08:37 -0300
+Processing by StockByLocationsController#new as HTML
+  Rendering stock_by_locations/new.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "locations"."name", "locations"."id" FROM "locations"[0m
+  ↳ app/views/stock_by_locations/_form.html.erb:16
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "products"."name", "products"."id" FROM "products"[0m
+  ↳ app/views/stock_by_locations/_form.html.erb:21
+  Rendered stock_by_locations/_form.html.erb (10.4ms)
+  Rendered stock_by_locations/new.html.erb within layouts/application (12.8ms)
+  Rendered shared/_navbar.html.erb (1.6ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 73ms (Views: 69.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/stock_by_locations" for ::1 at 2020-03-09 13:08:44 -0300
+Processing by StockByLocationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OP66gJoGiRw6CNkM/PhkkSF4wc+qS13gM/wSOyOaXPubP3DHnqrEmxkEA+KZAqGoybBF7IshXnx99aOYKZHNNw==", "stock_by_location"=>{"location_id"=>"1", "product_id"=>"5", "product_quantity"=>"222"}, "commit"=>"Create Stock by location"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/stock_by_locations_controller.rb:33
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stock_by_locations_controller.rb:33
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/stock_by_locations_controller.rb:33
+  [1m[36mStockByLocation Create (1.2ms)[0m  [1m[32mINSERT INTO "stock_by_locations" ("location_id", "product_id", "product_quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["location_id", 1], ["product_id", 5], ["product_quantity", 222], ["created_at", "2020-03-09 16:08:44.618577"], ["updated_at", "2020-03-09 16:08:44.618577"]]
+  ↳ app/controllers/stock_by_locations_controller.rb:33
+  [1m[35m (17.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/stock_by_locations_controller.rb:33
+Redirected to http://localhost:3000/stock_by_locations/9
+Completed 302 Found in 32ms (ActiveRecord: 19.5ms)
+
+
+Started GET "/stock_by_locations/9" for ::1 at 2020-03-09 13:08:44 -0300
+Processing by StockByLocationsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mStockByLocation Load (0.3ms)[0m  [1m[34mSELECT  "stock_by_locations".* FROM "stock_by_locations" WHERE "stock_by_locations"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/stock_by_locations_controller.rb:70
+  Rendering stock_by_locations/show.html.erb within layouts/application
+  Rendered stock_by_locations/show.html.erb within layouts/application (15.7ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `locations' for #<StockByLocation:0x00007ff104145800>
+Did you mean?  location
+               location=
+               location_id):
+    2: 
+    3: <p>
+    4:   <strong>Location:</strong>
+    5:   <%= @stock_by_location.locations.name %>
+    6: </p>
+    7: 
+    8: <p>
+  
+app/views/stock_by_locations/show.html.erb:5:in `_app_views_stock_by_locations_show_html_erb___3957391045151515591_70336566164120'
+Started GET "/stock_by_locations/9" for ::1 at 2020-03-09 13:08:59 -0300
+Processing by StockByLocationsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mStockByLocation Load (0.4ms)[0m  [1m[34mSELECT  "stock_by_locations".* FROM "stock_by_locations" WHERE "stock_by_locations"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/stock_by_locations_controller.rb:70
+  Rendering stock_by_locations/show.html.erb within layouts/application
+  [1m[36mLocation Load (0.9ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stock_by_locations/show.html.erb:5
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/stock_by_locations/show.html.erb:10
+  Rendered stock_by_locations/show.html.erb within layouts/application (7.5ms)
+  Rendered shared/_navbar.html.erb (2.4ms)
+  Rendered shared/_footer.html.erb (1.1ms)
+Completed 200 OK in 80ms (Views: 73.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 13:09:02 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.5ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/stock_by_locations/index.html.erb:18
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/stock_by_locations/index.html.erb:19
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stock_by_locations/index.html.erb:18
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/stock_by_locations/index.html.erb:19
+  Rendered stock_by_locations/index.html.erb within layouts/application (13.1ms)
+  Rendered shared/_navbar.html.erb (1.7ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 65ms (Views: 60.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/stock_by_locations" for ::1 at 2020-03-09 13:47:13 -0300
+Processing by StockByLocationsController#index as HTML
+  Rendering stock_by_locations/index.html.erb within layouts/application
+  [1m[36mStockByLocation Load (0.3ms)[0m  [1m[34mSELECT "stock_by_locations".* FROM "stock_by_locations"[0m
+  ↳ app/views/stock_by_locations/index.html.erb:16
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/stock_by_locations/index.html.erb:18
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/stock_by_locations/index.html.erb:19
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stock_by_locations/index.html.erb:18
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/stock_by_locations/index.html.erb:19
+  Rendered stock_by_locations/index.html.erb within layouts/application (39.6ms)
+  Rendered shared/_navbar.html.erb (1.4ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 96ms (Views: 79.8ms | ActiveRecord: 10.2ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5069929096434652170)[0m
+  ↳ bin/rails:9
+  [1m[35m (47.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateJoinTableProductUser (20200309172246)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (368.6ms)[0m  [1m[35mCREATE TABLE "products_users" ("product_id" bigint NOT NULL, "user_id" bigint NOT NULL)[0m
+  ↳ db/migrate/20200309172246_create_join_table_product_user.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200309172246"]]
+  ↳ bin/rails:9
+  [1m[35m (45.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateJoinTableClientUser (20200309172723)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (38.8ms)[0m  [1m[35mCREATE TABLE "clients_users" ("client_id" bigint NOT NULL, "user_id" bigint NOT NULL)[0m
+  ↳ db/migrate/20200309172723_create_join_table_client_user.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200309172723"]]
+  ↳ bin/rails:9
+  [1m[35m (39.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (44.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5069929096434652170)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-03-09 14:51:33 -0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4@rails523/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.4.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.4.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5069929096434652170)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateJoinTableLocationProduct (20200309172820)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "locations_products" ("location_id" bigint NOT NULL, "product_id" bigint NOT NULL)[0m
+  ↳ db/migrate/20200309172820_create_join_table_location_product.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200309172820"]]
+  ↳ bin/rails:9
+  [1m[35m (132.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5069929096434652170)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-03-09 14:51:53 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4@rails523/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.7ms)
+  Rendered shared/_navbar.html.erb (4.6ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 1538ms (Views: 1466.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2020-03-09 14:51:57 -0300
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (16.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:20
+  Rendered products/index.html.erb within layouts/application (40.8ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 121ms (Views: 54.0ms | ActiveRecord: 22.1ms)
+
+
+Started DELETE "/products/5" for ::1 at 2020-03-09 14:52:01 -0300
+Processing by ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nsWrf8U8PSX3t0gZGTPdJIN2U531w6TCHPlzRzOnFvT1w81I/BYaCEidPCy3fw5Fr1hEdbHextJ5l6NChWEImw==", "id"=>"5"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:68
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:58
+  [1m[36mProduct::HABTM_StockByLocations Destroy (55.9ms)[0m  [1m[31mDELETE FROM "products_stock_by_locations" WHERE "products_stock_by_locations"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:58
+  [1m[36mProduct::HABTM_Client Destroy (0.7ms)[0m  [1m[31mDELETE FROM "clients_products" WHERE "clients_products"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:58
+  [1m[36mProduct Destroy (39.3ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/products_controller.rb:58
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/products_controller.rb:58
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 100.6ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (PG::ForeignKeyViolation: ERROR:  update or delete on table "products" violates foreign key constraint "fk_rails_2b9cf5357b" on table "stock_by_locations"
+DETAIL:  Key (id)=(5) is still referenced from table "stock_by_locations".
+: DELETE FROM "products" WHERE "products"."id" = $1):
+  
+app/controllers/products_controller.rb:58:in `destroy'
+Started GET "/products/new" for ::1 at 2020-03-09 14:52:17 -0300
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (194.7ms)
+  Rendered products/new.html.erb within layouts/application (196.5ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 235ms (Views: 233.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2020-03-09 14:52:46 -0300
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xoP5NyLyDXJCvcuH1DdyHUQDXtvpNNoMq4nhjOp8D5dbg+gs8ofsWeHZ2490zkcaueQaCXJ9/xGkWj0nGcIb2A==", "product"=>{"sku"=>"231132", "name"=>"mazo yugi", "ean"=>"1112312312", "proveder"=>"konami", "category"=>"juego", "subcategory"=>"tcg", "active"=>"1"}, "commit"=>"Create Product"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:31
+  [1m[36mProduct Create (210.1ms)[0m  [1m[32mINSERT INTO "products" ("sku", "name", "ean", "proveder", "category", "subcategory", "active", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["sku", "231132"], ["name", "mazo yugi"], ["ean", 1112312312], ["proveder", "konami"], ["category", "juego"], ["subcategory", "tcg"], ["active", true], ["created_at", "2020-03-09 17:52:46.869892"], ["updated_at", "2020-03-09 17:52:46.869892"]]
+  ↳ app/controllers/products_controller.rb:31
+  [1m[35m (60.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:31
+Redirected to http://localhost:3000/products/6
+Completed 302 Found in 278ms (ActiveRecord: 271.0ms)
+
+
+Started GET "/products/6" for ::1 at 2020-03-09 14:52:47 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:68
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (0.9ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 72ms (Views: 65.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for ::1 at 2020-03-09 14:52:50 -0300
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:20
+  Rendered products/index.html.erb within layouts/application (3.6ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 38ms (Views: 35.5ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/products/6" for ::1 at 2020-03-09 14:52:53 -0300
+Processing by ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"hG0Vy5DjQxd9XveUYwd/yeN80t/JhI5DpYglAKGXc4vva3P8qclkOsJ0g6HNS6yoz1LFN42Z7FPA5vUFF1Ft5A==", "id"=>"6"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:68
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:58
+  [1m[36mProduct::HABTM_StockByLocations Destroy (0.3ms)[0m  [1m[31mDELETE FROM "products_stock_by_locations" WHERE "products_stock_by_locations"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/products_controller.rb:58
+  [1m[36mProduct::HABTM_Client Destroy (0.4ms)[0m  [1m[31mDELETE FROM "clients_products" WHERE "clients_products"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/products_controller.rb:58
+  [1m[36mProduct Destroy (1.0ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/products_controller.rb:58
+  [1m[35m (10.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:58
+Redirected to http://localhost:3000/products
+Completed 302 Found in 20ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/products" for ::1 at 2020-03-09 14:52:53 -0300
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:20
+  Rendered products/index.html.erb within layouts/application (3.6ms)
+  Rendered shared/_navbar.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 40ms (Views: 38.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/welcome/index" for ::1 at 2020-03-09 14:52:57 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 40ms (Views: 38.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clients" for ::1 at 2020-03-09 14:52:59 -0300
+Processing by ClientsController#index as HTML
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (637.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/clients/index.html.erb:19
+  Rendered clients/index.html.erb within layouts/application (661.9ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 1033ms (Views: 81.1ms | ActiveRecord: 642.8ms)
+
+
+Started GET "/clients" for ::1 at 2020-03-09 14:53:05 -0300
+Processing by ClientsController#index as HTML
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/clients/index.html.erb:19
+  Rendered clients/index.html.erb within layouts/application (4.9ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 41ms (Views: 38.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/clients/new" for ::1 at 2020-03-09 14:53:09 -0300
+Processing by ClientsController#new as HTML
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/_form.html.erb (5.1ms)
+  Rendered clients/new.html.erb within layouts/application (7.0ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 73ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/clients" for ::1 at 2020-03-09 14:53:49 -0300
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MaFwNZ/r2nC4Pi6r3paVbrQg5wSHG/aB7GloyEGBLCJD6NVOH5tkx+dPeUzHwyhuahalvvSvQS4G9Iko8jPllQ==", "client"=>{"name"=>"Next Dimension", "direction"=>"Franklin 123", "payment_condition"=>"contado", "phone"=>"123123213", "email"=>"nd@f.cl", "contact"=>"Jaun Perez"}, "commit"=>"Create Client"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/clients_controller.rb:30
+  [1m[36mClient Create (121.9ms)[0m  [1m[32mINSERT INTO "clients" ("name", "direction", "payment_condition", "phone", "email", "contact", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Next Dimension"], ["direction", "Franklin 123"], ["payment_condition", "contado"], ["phone", 123123213], ["email", "nd@f.cl"], ["contact", "Jaun Perez"], ["created_at", "2020-03-09 17:53:49.202031"], ["updated_at", "2020-03-09 17:53:49.202031"]]
+  ↳ app/controllers/clients_controller.rb:30
+  [1m[35m (143.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/clients_controller.rb:30
+Redirected to http://localhost:3000/clients/7
+Completed 302 Found in 272ms (ActiveRecord: 265.8ms)
+
+
+Started GET "/clients/7" for ::1 at 2020-03-09 14:53:49 -0300
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:67
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/show.html.erb within layouts/application (1.5ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 82ms (Views: 43.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/clients" for ::1 at 2020-03-09 14:53:51 -0300
+Processing by ClientsController#index as HTML
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/clients/index.html.erb:19
+  Rendered clients/index.html.erb within layouts/application (2.9ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 53ms (Views: 51.0ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/clients/7" for ::1 at 2020-03-09 14:53:57 -0300
+Processing by ClientsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1Rj/A9GsBldlmJMwMTSh2BJczaY7Y8uCLVFUBFqAb3m+Hpk06IYhetqy5wWfeHK5PnLaTn9+qZJIP4QB7EZxFg==", "id"=>"7"}
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:67
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/clients_controller.rb:57
+  [1m[36mClient::HABTM_Users Destroy (0.5ms)[0m  [1m[31mDELETE FROM "clients_users" WHERE "clients_users"."client_id" = $1[0m  [["client_id", 7]]
+  ↳ app/controllers/clients_controller.rb:57
+  [1m[36mClient::HABTM_Products Destroy (0.4ms)[0m  [1m[31mDELETE FROM "clients_products" WHERE "clients_products"."client_id" = $1[0m  [["client_id", 7]]
+  ↳ app/controllers/clients_controller.rb:57
+  [1m[36mClient Destroy (48.0ms)[0m  [1m[31mDELETE FROM "clients" WHERE "clients"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/clients_controller.rb:57
+  [1m[35m (43.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/clients_controller.rb:57
+Redirected to http://localhost:3000/clients
+Completed 302 Found in 109ms (ActiveRecord: 95.3ms)
+
+
+Started GET "/clients" for ::1 at 2020-03-09 14:53:57 -0300
+Processing by ClientsController#index as HTML
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/clients/index.html.erb:19
+  Rendered clients/index.html.erb within layouts/application (3.2ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/welcome/index" for ::1 at 2020-03-09 14:54:26 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.6ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 40ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/providers" for ::1 at 2020-03-09 14:54:27 -0300
+Processing by ProvidersController#index as HTML
+  Rendering providers/index.html.erb within layouts/application
+  [1m[36mProvider Load (4.6ms)[0m  [1m[34mSELECT "providers".* FROM "providers"[0m
+  ↳ app/views/providers/index.html.erb:19
+  Rendered providers/index.html.erb within layouts/application (22.6ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 96ms (Views: 46.7ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/providers/new" for ::1 at 2020-03-09 14:54:30 -0300
+Processing by ProvidersController#new as HTML
+  Rendering providers/new.html.erb within layouts/application
+  Rendered providers/_form.html.erb (4.1ms)
+  Rendered providers/new.html.erb within layouts/application (5.9ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 56ms (Views: 53.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/providers" for ::1 at 2020-03-09 14:55:00 -0300
+Processing by ProvidersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mjx2bxZ10SlZLxbZl0ijRVZx2p7IE8MxOZRJLcqL5BdEG/UAQ48j3Vj9Y4EDA1NXEXQnNXAfPx8Lm/E7uJijHg==", "provider"=>{"name"=>"Konami", "direction"=>"japon123132", "payment_condition"=>"30 dias", "phone"=>"213312", "email"=>"konami@konami.cl", "contact"=>"Tuclito Sakayama"}, "commit"=>"Create Provider"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/providers_controller.rb:30
+  [1m[36mProvider Create (13.1ms)[0m  [1m[32mINSERT INTO "providers" ("name", "direction", "payment_condition", "phone", "email", "contact", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Konami"], ["direction", "japon123132"], ["payment_condition", "30 dias"], ["phone", 213312], ["email", "konami@konami.cl"], ["contact", "Tuclito Sakayama"], ["created_at", "2020-03-09 17:55:00.719445"], ["updated_at", "2020-03-09 17:55:00.719445"]]
+  ↳ app/controllers/providers_controller.rb:30
+  [1m[35m (32.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/providers_controller.rb:30
+Redirected to http://localhost:3000/providers/3
+Completed 302 Found in 52ms (ActiveRecord: 46.2ms)
+
+
+Started GET "/providers/3" for ::1 at 2020-03-09 14:55:00 -0300
+Processing by ProvidersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProvider Load (0.3ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/providers_controller.rb:67
+  Rendering providers/show.html.erb within layouts/application
+  Rendered providers/show.html.erb within layouts/application (1.6ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 56ms (Views: 37.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/providers" for ::1 at 2020-03-09 14:55:03 -0300
+Processing by ProvidersController#index as HTML
+  Rendering providers/index.html.erb within layouts/application
+  [1m[36mProvider Load (0.6ms)[0m  [1m[34mSELECT "providers".* FROM "providers"[0m
+  ↳ app/views/providers/index.html.erb:19
+  Rendered providers/index.html.erb within layouts/application (4.6ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 45ms (Views: 43.1ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/providers/3" for ::1 at 2020-03-09 14:55:05 -0300
+Processing by ProvidersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YwPCx7ZbqCowQyEoM6qb5Xjd53MExdOzPZDvtUqIluwIBaTwj3GPB49pVR2d5kiEVPPwm0DYsaNY/j+w/E6Igw==", "id"=>"3"}
+  [1m[36mProvider Load (0.5ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/providers_controller.rb:67
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/providers_controller.rb:57
+  [1m[36mProvider Destroy (150.4ms)[0m  [1m[31mDELETE FROM "providers" WHERE "providers"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/providers_controller.rb:57
+  [1m[35m (154.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/providers_controller.rb:57
+Redirected to http://localhost:3000/providers
+Completed 302 Found in 310ms (ActiveRecord: 305.8ms)
+
+
+Started GET "/providers" for ::1 at 2020-03-09 14:55:06 -0300
+Processing by ProvidersController#index as HTML
+  Rendering providers/index.html.erb within layouts/application
+  [1m[36mProvider Load (0.4ms)[0m  [1m[34mSELECT "providers".* FROM "providers"[0m
+  ↳ app/views/providers/index.html.erb:19
+  Rendered providers/index.html.erb within layouts/application (2.7ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/welcome/index" for ::1 at 2020-03-09 14:55:08 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+  Rendered shared/_navbar.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 52ms (Views: 50.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/locations" for ::1 at 2020-03-09 14:55:10 -0300
+Processing by LocationsController#index as HTML
+  Rendering locations/index.html.erb within layouts/application
+  [1m[36mLocation Load (27.9ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  ↳ app/views/locations/index.html.erb:15
+  Rendered locations/index.html.erb within layouts/application (42.0ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 122ms (Views: 42.1ms | ActiveRecord: 32.6ms)
+
+
+Started GET "/locations/new" for ::1 at 2020-03-09 14:55:12 -0300
+Processing by LocationsController#new as HTML
+  Rendering locations/new.html.erb within layouts/application
+  Rendered locations/_form.html.erb (3.4ms)
+  Rendered locations/new.html.erb within layouts/application (207.9ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 249ms (Views: 244.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/locations" for ::1 at 2020-03-09 14:55:26 -0300
+Processing by LocationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gaCHwKEJBeX2opKgdzY/DhIFkw1unZSE6VrYDNJ0zHdYpRjeTC4qk5UlODXOfpchTsh6TPcf7kvR/PA1JRIMkQ==", "location"=>{"name"=>"R01-02", "category"=>"Rack"}, "commit"=>"Create Location"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locations_controller.rb:30
+  [1m[36mLocation Create (667.9ms)[0m  [1m[32mINSERT INTO "locations" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "R01-02"], ["category", "Rack"], ["created_at", "2020-03-09 17:55:26.443641"], ["updated_at", "2020-03-09 17:55:26.443641"]]
+  ↳ app/controllers/locations_controller.rb:30
+  [1m[35m (147.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/locations_controller.rb:30
+Redirected to http://localhost:3000/locations/3
+Completed 302 Found in 821ms (ActiveRecord: 815.2ms)
+
+
+Started GET "/locations/3" for ::1 at 2020-03-09 14:55:27 -0300
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:67
+  Rendering locations/show.html.erb within layouts/application
+  Rendered locations/show.html.erb within layouts/application (0.7ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 61ms (Views: 52.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/locations" for ::1 at 2020-03-09 14:55:29 -0300
+Processing by LocationsController#index as HTML
+  Rendering locations/index.html.erb within layouts/application
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  ↳ app/views/locations/index.html.erb:15
+  Rendered locations/index.html.erb within layouts/application (3.0ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 39ms (Views: 35.1ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/locations/2" for ::1 at 2020-03-09 14:55:34 -0300
+Processing by LocationsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xeLl9j0IjRq3DxBj999Nq2T9eons/7ugPv7nGovE59Wu5IPBBCKqNwglZFZZk57KSNNtYaji2bBbkDcfPQL5ug==", "id"=>"2"}
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:67
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locations_controller.rb:57
+  [1m[36mLocation::HABTM_StockByLocations Destroy (0.5ms)[0m  [1m[31mDELETE FROM "locations_stock_by_locations" WHERE "locations_stock_by_locations"."location_id" = $1[0m  [["location_id", 2]]
+  ↳ app/controllers/locations_controller.rb:57
+  [1m[36mLocation::HABTM_Products Destroy (0.3ms)[0m  [1m[31mDELETE FROM "locations_products" WHERE "locations_products"."location_id" = $1[0m  [["location_id", 2]]
+  ↳ app/controllers/locations_controller.rb:57
+  [1m[36mLocation Destroy (1.7ms)[0m  [1m[31mDELETE FROM "locations" WHERE "locations"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/locations_controller.rb:57
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locations_controller.rb:57
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 6.8ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (PG::ForeignKeyViolation: ERROR:  update or delete on table "locations" violates foreign key constraint "fk_rails_6ed5f46a66" on table "stock_by_locations"
+DETAIL:  Key (id)=(2) is still referenced from table "stock_by_locations".
+: DELETE FROM "locations" WHERE "locations"."id" = $1):
+  
+app/controllers/locations_controller.rb:57:in `destroy'
