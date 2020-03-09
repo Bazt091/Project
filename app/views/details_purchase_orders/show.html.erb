@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Info purchase order:</strong>
+  <%= @details_purchase_order.info_purchase_order %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @details_purchase_order.product %>
+</p>
+
+<p>
+  <strong>Product quantity:</strong>
+  <%= @details_purchase_order.product_quantity %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @details_purchase_order.comment %>
+</p>
+
+<%= link_to 'Edit', edit_details_purchase_order_path(@details_purchase_order) %> |
+<%= link_to 'Back', details_purchase_orders_path %>

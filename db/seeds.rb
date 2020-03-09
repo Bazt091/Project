@@ -5,10 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
 Product.destroy_all
 Provider.destroy_all
 Client.destroy_all
+StockByLocation.destroy_all
 
 Product.create(
 sku: 1223,
@@ -54,4 +54,9 @@ payment_condition: 'Contado',
 phone: 0303456,
 email: 'a@aaaaa.cl',
 contact: 'Pepito Pepito'
+)
+
+Location.create(
+    name: "Cuarentena",
+    category: "NO DISPONIBLE"
 )

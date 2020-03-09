@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_24_171911) do
+ActiveRecord::Schema.define(version: 2020_03_09_145237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,33 @@ ActiveRecord::Schema.define(version: 2020_02_24_171911) do
     t.string "contact"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "clients_products", id: false, force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.bigint "client_id", null: false
+  end
+
+  create_table "details_dispatch_orders", force: :cascade do |t|
+    t.bigint "info_dispatch_order_id"
+    t.bigint "product_id"
+    t.integer "product_quantity"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["info_dispatch_order_id"], name: "index_details_dispatch_orders_on_info_dispatch_order_id"
+    t.index ["product_id"], name: "index_details_dispatch_orders_on_product_id"
+  end
+
+  create_table "details_purchase_orders", force: :cascade do |t|
+    t.bigint "info_purchase_order_id"
+    t.bigint "product_id"
+    t.integer "product_quantity"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["info_purchase_order_id"], name: "index_details_purchase_orders_on_info_purchase_order_id"
+    t.index ["product_id"], name: "index_details_purchase_orders_on_product_id"
   end
 
   create_table "info_dispatch_orders", force: :cascade do |t|
@@ -56,6 +83,11 @@ ActiveRecord::Schema.define(version: 2020_02_24_171911) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "locations_stock_by_locations", id: false, force: :cascade do |t|
+    t.bigint "location_id", null: false
+    t.bigint "stock_by_location_id", null: false
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "sku"
     t.string "name"
@@ -68,6 +100,11 @@ ActiveRecord::Schema.define(version: 2020_02_24_171911) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "products_stock_by_locations", id: false, force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.bigint "stock_by_location_id", null: false
+  end
+
   create_table "providers", force: :cascade do |t|
     t.string "name"
     t.string "direction"
@@ -77,6 +114,16 @@ ActiveRecord::Schema.define(version: 2020_02_24_171911) do
     t.string "contact"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "stock_by_locations", force: :cascade do |t|
+    t.bigint "location_id"
+    t.bigint "product_id"
+    t.integer "product_quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["location_id"], name: "index_stock_by_locations_on_location_id"
+    t.index ["product_id"], name: "index_stock_by_locations_on_product_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -91,8 +138,14 @@ ActiveRecord::Schema.define(version: 2020_02_24_171911) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "details_dispatch_orders", "info_dispatch_orders"
+  add_foreign_key "details_dispatch_orders", "products"
+  add_foreign_key "details_purchase_orders", "info_purchase_orders"
+  add_foreign_key "details_purchase_orders", "products"
   add_foreign_key "info_dispatch_orders", "clients"
   add_foreign_key "info_dispatch_orders", "users"
   add_foreign_key "info_purchase_orders", "providers"
   add_foreign_key "info_purchase_orders", "users"
+  add_foreign_key "stock_by_locations", "locations"
+  add_foreign_key "stock_by_locations", "products"
 end

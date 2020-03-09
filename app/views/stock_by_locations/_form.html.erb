@@ -1,0 +1,32 @@
+<%= form_with(model: stock_by_location, local: true) do |form| %>
+  <% if stock_by_location.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stock_by_location.errors.count, "error") %> prohibited this stock_by_location from being saved:</h2>
+
+      <ul>
+      <% stock_by_location.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :location_id %>
+    <%= form.select :location_id, Location.all.pluck(:name, :id) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_id %>
+    <%= form.select :product_id, Product.all.pluck(:name, :id) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_quantity %>
+    <%= form.number_field :product_quantity %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

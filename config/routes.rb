@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :stock_by_locations
+  resources :details_dispatch_orders
+  resources :details_purchase_orders
   resources :info_dispatch_orders
   resources :info_purchase_orders
   resources :locations

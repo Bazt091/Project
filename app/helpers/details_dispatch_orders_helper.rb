@@ -1,0 +1,2 @@
+module DetailsDispatchOrdersHelper
+end

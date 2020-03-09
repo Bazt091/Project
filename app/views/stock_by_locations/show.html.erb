@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @stock_by_location.locations.name %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @stock_by_location.products.name %>
+</p>
+
+<p>
+  <strong>Product quantity:</strong>
+  <%= @stock_by_location.product_quantity %>
+</p>
+
+<%= link_to 'Edit', edit_stock_by_location_path(@stock_by_location) %> |
+<%= link_to 'Back', stock_by_locations_path %>

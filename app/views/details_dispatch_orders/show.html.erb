@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Info dispatch order:</strong>
+  <%= @details_dispatch_order.info_dispatch_order %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @details_dispatch_order.product %>
+</p>
+
+<p>
+  <strong>Product quantity:</strong>
+  <%= @details_dispatch_order.product_quantity %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @details_dispatch_order.comment %>
+</p>
+
+<%= link_to 'Edit', edit_details_dispatch_order_path(@details_dispatch_order) %> |
+<%= link_to 'Back', details_dispatch_orders_path %>
