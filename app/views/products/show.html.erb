@@ -35,5 +35,15 @@
   <%= @product.active %>
 </p>
 
+<% if @product.image.attached? %>
+ <p>
+    <strong>Image:</strong>
+ <br>
+    <%@product.image.each do |image| %>
+    <%= image_tag image.variant(resize:"200x200",negate:true,flip:true)%>
+  <%end%>
+ </p>
+<%end%>
+
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
