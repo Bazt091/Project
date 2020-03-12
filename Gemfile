@@ -51,6 +51,7 @@ group :development do
   gem 'ruby-graphviz' 
   gem "rails-erd"
   gem 'filterrific'
+  gem 'activeadmin'
 end
 
 group :test do
@@ -59,6 +60,10 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+end
+
+group:production do 
+  gem"aws-sdk-s3", require:false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
