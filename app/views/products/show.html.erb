@@ -1,46 +1,59 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Sku:</strong>
-  <%= @product.sku %>
-</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <% if @product.image.attached? %>
+        <p>
+          <strong>Imagen:</strong><br>
+            <%= image_tag @product.image %>
+        </p>
+        <% else %>
+          <strong>Imagen:</strong><br>
+              <h2> SIN IMAGEN DISPONIBLE </h2>
+      <%end%>
 
-<p>
-  <strong>Ean:</strong>
-  <%= @product.ean %>
-</p>
+    </div>
+    <div class="col-4">
+      <p>
+        <strong>Sku:</strong>
+        <%= @product.sku %>
+      </p>
 
-<p>
-  <strong>Proveder:</strong>
-  <%= @product.proveder %>
-</p>
+      <p>
+        <strong>Nombre del producto:</strong>
+        <%= @product.name %>
+      </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @product.category %>
-</p>
+      <p>
+        <strong>Ean:</strong>
+        <%= @product.ean %>
+      </p>
 
-<p>
-  <strong>Subcategory:</strong>
-  <%= @product.subcategory %>
-</p>
+      <p>
+        <strong>Proveedor:</strong>
+        <%= @product.proveder %>
+      </p>
 
-<p>
-  <strong>Active:</strong>
-  <%= @product.active %>
-</p>
+      <p>
+        <strong>Categoria:</strong>
+        <%= @product.category %>
+      </p>
 
-<% if @product.image.attached? %>
-  <p>
-    <strong>Image:</strong><br>
-      <%= image_tag @product.image %>
-  </p>
-<%end%>
+      <p>
+        <strong>Subcategoria:</strong>
+        <%= @product.subcategory %>
+      </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
+      <p>
+        <strong>Activo:</strong>
+        <%= @product.active %>
+      </p>
+      </div>
+    </div>
+</div>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> <br>
 <%= link_to 'Back', products_path %>

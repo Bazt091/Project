@@ -63,3 +63,4 @@
 #    category: "NO DISPONIBLE"
     
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+AdminUser.create!(email: 'balvarado@admin.com', password: 'ba1234', password_confirmation: 'ba1234')

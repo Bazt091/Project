@@ -15797,3 +15797,727 @@ Processing by ActiveStorage::DiskController#show as PNG
 Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
 
 
+Started GET "/products/3/edit" for ::1 at 2020-03-13 10:59:57 -0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:74
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (6.5ms)
+  Rendered products/edit.html.erb within layouts/application (8.0ms)
+  Rendered shared/_navbar.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 457ms (Views: 401.2ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/products" for ::1 at 2020-03-13 11:00:01 -0300
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:20
+  Rendered products/index.html.erb within layouts/application (3.3ms)
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 109ms (Views: 103.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products/3" for ::1 at 2020-03-13 11:00:02 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:74
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:38
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:38
+  Rendered products/show.html.erb within layouts/application (48.9ms)
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 128ms (Views: 113.3ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--06c5f9ea4d56eb33eca7fa327f615eddf97a2bb4/Captura%20de%20pantalla%20de%202020-01-17%2016-15-15.png" for ::1 at 2020-03-13 11:00:03 -0300
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--06c5f9ea4d56eb33eca7fa327f615eddf97a2bb4", "filename"=>"Captura de pantalla de 2020-01-17 16-15-15"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: kxAM677keUkRM6oKf7wEBCKC (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRhM2hCVFRZM04ydGxWV3RTVFRadlMyWTNkMFZDUTB0REJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSUJqR2x1YkdsdVpUc2dabWxzWlc1aGJXVTlJa05oY0hSMWNtRWdaR1VnY0dGdWRHRnNiR0VnWkdVZ01qQXlNQzB3TVMweE55QXhOaTB4TlMweE5TNXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjBOaGNIUjFjbUVsTWpCa1pTVXlNSEJoYm5SaGJHeGhKVEl3WkdVbE1qQXlNREl3TFRBeExURTNKVEl3TVRZdE1UVXRNVFV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDMtMTNUMTQ6MDU6MDMuMDUyWiIsInB1ciI6ImJsb2Jfa2V5In19--08d7228c2e0278452e68f804fc61b8f4fa69d511/Captura%20de%20pantalla%20de%202020-01-17%2016-15-15.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Captura+de+pantalla+de+2020-01-17+16-15-15.png%22%3B+filename%2A%3DUTF-8%27%27Captura%2520de%2520pantalla%2520de%25202020-01-17%252016-15-15.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRhM2hCVFRZM04ydGxWV3RTVFRadlMyWTNkMFZDUTB0REJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSUJqR2x1YkdsdVpUc2dabWxzWlc1aGJXVTlJa05oY0hSMWNtRWdaR1VnY0dGdWRHRnNiR0VnWkdVZ01qQXlNQzB3TVMweE55QXhOaTB4TlMweE5TNXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjBOaGNIUjFjbUVsTWpCa1pTVXlNSEJoYm5SaGJHeGhKVEl3WkdVbE1qQXlNREl3TFRBeExURTNKVEl3TVRZdE1UVXRNVFV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDMtMTNUMTQ6MDU6MDMuMDUyWiIsInB1ciI6ImJsb2Jfa2V5In19--08d7228c2e0278452e68f804fc61b8f4fa69d511/Captura%20de%20pantalla%20de%202020-01-17%2016-15-15.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Captura+de+pantalla+de+2020-01-17+16-15-15.png%22%3B+filename%2A%3DUTF-8%27%27Captura%2520de%2520pantalla%2520de%25202020-01-17%252016-15-15.png
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRhM2hCVFRZM04ydGxWV3RTVFRadlMyWTNkMFZDUTB0REJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSUJqR2x1YkdsdVpUc2dabWxzWlc1aGJXVTlJa05oY0hSMWNtRWdaR1VnY0dGdWRHRnNiR0VnWkdVZ01qQXlNQzB3TVMweE55QXhOaTB4TlMweE5TNXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjBOaGNIUjFjbUVsTWpCa1pTVXlNSEJoYm5SaGJHeGhKVEl3WkdVbE1qQXlNREl3TFRBeExURTNKVEl3TVRZdE1UVXRNVFV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDMtMTNUMTQ6MDU6MDMuMDUyWiIsInB1ciI6ImJsb2Jfa2V5In19--08d7228c2e0278452e68f804fc61b8f4fa69d511/Captura%20de%20pantalla%20de%202020-01-17%2016-15-15.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Captura+de+pantalla+de+2020-01-17+16-15-15.png%22%3B+filename%2A%3DUTF-8%27%27Captura%2520de%2520pantalla%2520de%25202020-01-17%252016-15-15.png" for ::1 at 2020-03-13 11:00:03 -0300
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"Captura de pantalla de 2020-01-17 16-15-15.png\"; filename*=UTF-8''Captura%20de%20pantalla%20de%202020-01-17%2016-15-15.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRhM2hCVFRZM04ydGxWV3RTVFRadlMyWTNkMFZDUTB0REJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSUJqR2x1YkdsdVpUc2dabWxzWlc1aGJXVTlJa05oY0hSMWNtRWdaR1VnY0dGdWRHRnNiR0VnWkdVZ01qQXlNQzB3TVMweE55QXhOaTB4TlMweE5TNXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjBOaGNIUjFjbUVsTWpCa1pTVXlNSEJoYm5SaGJHeGhKVEl3WkdVbE1qQXlNREl3TFRBeExURTNKVEl3TVRZdE1UVXRNVFV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDMtMTNUMTQ6MDU6MDMuMDUyWiIsInB1ciI6ImJsb2Jfa2V5In19--08d7228c2e0278452e68f804fc61b8f4fa69d511", "filename"=>"Captura de pantalla de 2020-01-17 16-15-15"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/products/3/edit" for ::1 at 2020-03-13 11:01:49 -0300
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:74
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (6.9ms)
+  Rendered products/edit.html.erb within layouts/application (8.6ms)
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 112ms (Views: 105.7ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/products/3" for ::1 at 2020-03-13 11:02:15 -0300
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cNcFfbFoMLQKqNWBE+KeFOfWu49GgWDKv7JapkliuE0LBEDHdg9cFHWMTGzRNcB69dP6T+GJ4G3kPt+T5a6Z0w==", "product"=>{"sku"=>"1223", "name"=>"tornillo 3/4", "ean"=>"1234567890123", "proveder"=>"ferreteria don pepito", "category"=>"construccion", "subcategory"=>"tornillos", "active"=>"1", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fd1fdf4dab8 @tempfile=#<Tempfile:/tmp/RackMultipart20200313-9497-wgtkjh.png>, @original_filename="hero_strike.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"product[image]\"; filename=\"hero_strike.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Update Product", "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:74
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:45
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:45
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:45
+[36m  Disk Storage (37.3ms) [0m[32mUploaded file to key: wFvAN6UCwtGZpPF6k3Yz4AYk (checksum: 4ZoC+ItOKAmskF83KxHcXw==)[0m
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "wFvAN6UCwtGZpPF6k3Yz4AYk"], ["filename", "hero_strike.png"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 53242], ["checksum", "4ZoC+ItOKAmskF83KxHcXw=="], ["created_at", "2020-03-13 14:02:15.408002"]]
+  ↳ app/controllers/products_controller.rb:45
+  [1m[36mActiveStorage::Attachment Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/products_controller.rb:45
+  [1m[36mActiveStorage::Attachment Create (0.9ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Product"], ["record_id", 3], ["blob_id", 2], ["created_at", "2020-03-13 14:02:15.413981"]]
+  ↳ app/controllers/products_controller.rb:45
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 94fcd293-4f35-4595-bf48-ff985efcbbc5) to Async(default) with arguments: #<GlobalID:0x00007fd1fe630ee8 @uri=#<URI::GID gid://wms/ActiveStorage::Blob/1>>
+  [1m[36mProduct Update (0.6ms)[0m  [1m[33mUPDATE "products" SET "updated_at" = $1 WHERE "products"."id" = $2[0m  [["updated_at", "2020-03-13 14:02:15.416459"], ["id", 3]]
+  ↳ app/controllers/products_controller.rb:45
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [94fcd293-4f35-4595-bf48-ff985efcbbc5] Performing ActiveStorage::PurgeJob (Job ID: 94fcd293-4f35-4595-bf48-ff985efcbbc5) from Async(default) with arguments: #<GlobalID:0x00007fd1fe67def0 @uri=#<URI::GID gid://wms/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::PurgeJob] [94fcd293-4f35-4595-bf48-ff985efcbbc5]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [94fcd293-4f35-4595-bf48-ff985efcbbc5]   ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (52.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:45
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: a7835d6c-2b99-4ab8-8dc8-881b9d150a64) to Async(default) with arguments: #<GlobalID:0x00007fd1fe6be590 @uri=#<URI::GID gid://wms/ActiveStorage::Blob/2>>
+Redirected to http://localhost:3000/products/3
+Completed 302 Found in 155ms (ActiveRecord: 56.7ms)
+
+
+[ActiveJob] [ActiveStorage::PurgeJob] [94fcd293-4f35-4595-bf48-ff985efcbbc5]   [1m[36mActiveStorage::Attachment Exists (4.5ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [94fcd293-4f35-4595-bf48-ff985efcbbc5]   ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [94fcd293-4f35-4595-bf48-ff985efcbbc5]   [1m[36mActiveStorage::Blob Destroy (1.0ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [94fcd293-4f35-4595-bf48-ff985efcbbc5]   ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Started GET "/products/3" for ::1 at 2020-03-13 11:02:15 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:74
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a7835d6c-2b99-4ab8-8dc8-881b9d150a64] Performing ActiveStorage::AnalyzeJob (Job ID: a7835d6c-2b99-4ab8-8dc8-881b9d150a64) from Async(default) with arguments: #<GlobalID:0x00007fd1fe74c318 @uri=#<URI::GID gid://wms/ActiveStorage::Blob/2>>
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:38
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a7835d6c-2b99-4ab8-8dc8-881b9d150a64] [36m  Disk Storage (1.6ms) [0m[34mDownloaded file from key: wFvAN6UCwtGZpPF6k3Yz4AYk[0m
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:38
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a7835d6c-2b99-4ab8-8dc8-881b9d150a64] Skipping image analysis because the mini_magick gem isn't installed
+  Rendered products/show.html.erb within layouts/application (10.8ms)
+[ActiveJob] [ActiveStorage::PurgeJob] [94fcd293-4f35-4595-bf48-ff985efcbbc5]   [1m[35m (23.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [94fcd293-4f35-4595-bf48-ff985efcbbc5]   ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a7835d6c-2b99-4ab8-8dc8-881b9d150a64]   [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a7835d6c-2b99-4ab8-8dc8-881b9d150a64]   ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a7835d6c-2b99-4ab8-8dc8-881b9d150a64]   [1m[36mActiveStorage::Blob Update (0.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a7835d6c-2b99-4ab8-8dc8-881b9d150a64]   ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [94fcd293-4f35-4595-bf48-ff985efcbbc5]   [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [94fcd293-4f35-4595-bf48-ff985efcbbc5]   ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [94fcd293-4f35-4595-bf48-ff985efcbbc5] [36m  Disk Storage (0.2ms) [0m[31mDeleted file from key: kxAM677keUkRM6oKf7wEBCKC[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [94fcd293-4f35-4595-bf48-ff985efcbbc5] [36m  Disk Storage (0.2ms) [0m[31mDeleted files by key prefix: variants/kxAM677keUkRM6oKf7wEBCKC/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [94fcd293-4f35-4595-bf48-ff985efcbbc5] Performed ActiveStorage::PurgeJob (Job ID: 94fcd293-4f35-4595-bf48-ff985efcbbc5) from Async(default) in 89.1ms
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a7835d6c-2b99-4ab8-8dc8-881b9d150a64]   [1m[35m (16.0ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a7835d6c-2b99-4ab8-8dc8-881b9d150a64]   ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a7835d6c-2b99-4ab8-8dc8-881b9d150a64] Performed ActiveStorage::AnalyzeJob (Job ID: a7835d6c-2b99-4ab8-8dc8-881b9d150a64) from Async(default) in 34.42ms
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 122ms (Views: 114.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f00284fbb877100cc8197809667f309ee5b5df79/hero_strike.png" for ::1 at 2020-03-13 11:02:15 -0300
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f00284fbb877100cc8197809667f309ee5b5df79", "filename"=>"hero_strike"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: wFvAN6UCwtGZpPF6k3Yz4AYk (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkMFoyUVU0MlZVTjNkRWRhY0ZCR05tc3pXWG8wUVZsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhR1Z5YjE5emRISnBhMlV1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG9aWEp2WDNOMGNtbHJaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDMtMTNUMTQ6MDc6MTUuNjg1WiIsInB1ciI6ImJsb2Jfa2V5In19--bf8ef32251d92f9f73b9eaae0ead58e6b358f94a/hero_strike.png?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22hero_strike.png%22%3B+filename%2A%3DUTF-8%27%27hero_strike.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkMFoyUVU0MlZVTjNkRWRhY0ZCR05tc3pXWG8wUVZsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhR1Z5YjE5emRISnBhMlV1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG9aWEp2WDNOMGNtbHJaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDMtMTNUMTQ6MDc6MTUuNjg1WiIsInB1ciI6ImJsb2Jfa2V5In19--bf8ef32251d92f9f73b9eaae0ead58e6b358f94a/hero_strike.png?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22hero_strike.png%22%3B+filename%2A%3DUTF-8%27%27hero_strike.png
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkMFoyUVU0MlZVTjNkRWRhY0ZCR05tc3pXWG8wUVZsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhR1Z5YjE5emRISnBhMlV1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG9aWEp2WDNOMGNtbHJaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDMtMTNUMTQ6MDc6MTUuNjg1WiIsInB1ciI6ImJsb2Jfa2V5In19--bf8ef32251d92f9f73b9eaae0ead58e6b358f94a/hero_strike.png?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22hero_strike.png%22%3B+filename%2A%3DUTF-8%27%27hero_strike.png" for ::1 at 2020-03-13 11:02:15 -0300
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"hero_strike.png\"; filename*=UTF-8''hero_strike.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkMFoyUVU0MlZVTjNkRWRhY0ZCR05tc3pXWG8wUVZsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhR1Z5YjE5emRISnBhMlV1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG9aWEp2WDNOMGNtbHJaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDMtMTNUMTQ6MDc6MTUuNjg1WiIsInB1ciI6ImJsb2Jfa2V5In19--bf8ef32251d92f9f73b9eaae0ead58e6b358f94a", "filename"=>"hero_strike"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/products/3/edit" for ::1 at 2020-03-13 11:02:23 -0300
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:74
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (6.9ms)
+  Rendered products/edit.html.erb within layouts/application (8.6ms)
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 103ms (Views: 97.7ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/products/3" for ::1 at 2020-03-13 11:03:02 -0300
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RsaNOfC1+vQDsl+/IrSOoxk/pX3CB31ddLb5X/w558g9FciDN9KWVHyWxlLgY9DNCzrkvWUP/fovOnxqUPXGVg==", "product"=>{"sku"=>"1223", "name"=>"DECK HERO STRIKE", "ean"=>"1234567890123", "proveder"=>"KONAMI", "category"=>"JUEGOS", "subcategory"=>"TCG", "active"=>"1"}, "commit"=>"Update Product", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:74
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:45
+  [1m[36mProduct Update (0.5ms)[0m  [1m[33mUPDATE "products" SET "name" = $1, "proveder" = $2, "category" = $3, "subcategory" = $4, "updated_at" = $5 WHERE "products"."id" = $6[0m  [["name", "DECK HERO STRIKE"], ["proveder", "KONAMI"], ["category", "JUEGOS"], ["subcategory", "TCG"], ["updated_at", "2020-03-13 14:03:02.339859"], ["id", 3]]
+  ↳ app/controllers/products_controller.rb:45
+  [1m[35m (365.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:45
+Redirected to http://localhost:3000/products/3
+Completed 302 Found in 375ms (ActiveRecord: 367.0ms)
+
+
+Started GET "/products/3" for ::1 at 2020-03-13 11:03:02 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:74
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:38
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:38
+  Rendered products/show.html.erb within layouts/application (4.5ms)
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 111ms (Views: 103.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkMFoyUVU0MlZVTjNkRWRhY0ZCR05tc3pXWG8wUVZsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhR1Z5YjE5emRISnBhMlV1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG9aWEp2WDNOMGNtbHJaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDMtMTNUMTQ6MDc6MTUuNjg1WiIsInB1ciI6ImJsb2Jfa2V5In19--bf8ef32251d92f9f73b9eaae0ead58e6b358f94a/hero_strike.png?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22hero_strike.png%22%3B+filename%2A%3DUTF-8%27%27hero_strike.png" for ::1 at 2020-03-13 11:03:02 -0300
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"hero_strike.png\"; filename*=UTF-8''hero_strike.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkMFoyUVU0MlZVTjNkRWRhY0ZCR05tc3pXWG8wUVZsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhR1Z5YjE5emRISnBhMlV1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG9aWEp2WDNOMGNtbHJaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDMtMTNUMTQ6MDc6MTUuNjg1WiIsInB1ciI6ImJsb2Jfa2V5In19--bf8ef32251d92f9f73b9eaae0ead58e6b358f94a", "filename"=>"hero_strike"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/products/3" for ::1 at 2020-03-13 11:07:01 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:74
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  Rendered products/show.html.erb within layouts/application (5.4ms)
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 95ms (Views: 89.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkMFoyUVU0MlZVTjNkRWRhY0ZCR05tc3pXWG8wUVZsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhR1Z5YjE5emRISnBhMlV1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG9aWEp2WDNOMGNtbHJaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDMtMTNUMTQ6MDc6MTUuNjg1WiIsInB1ciI6ImJsb2Jfa2V5In19--bf8ef32251d92f9f73b9eaae0ead58e6b358f94a/hero_strike.png?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22hero_strike.png%22%3B+filename%2A%3DUTF-8%27%27hero_strike.png" for ::1 at 2020-03-13 11:07:01 -0300
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"hero_strike.png\"; filename*=UTF-8''hero_strike.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkMFoyUVU0MlZVTjNkRWRhY0ZCR05tc3pXWG8wUVZsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhR1Z5YjE5emRISnBhMlV1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG9aWEp2WDNOMGNtbHJaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDMtMTNUMTQ6MDc6MTUuNjg1WiIsInB1ciI6ImJsb2Jfa2V5In19--bf8ef32251d92f9f73b9eaae0ead58e6b358f94a", "filename"=>"hero_strike"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/products/3" for ::1 at 2020-03-13 11:07:16 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:74
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  Rendered products/show.html.erb within layouts/application (6.5ms)
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 122ms (Views: 115.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f00284fbb877100cc8197809667f309ee5b5df79/hero_strike.png" for ::1 at 2020-03-13 11:07:16 -0300
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f00284fbb877100cc8197809667f309ee5b5df79", "filename"=>"hero_strike"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: wFvAN6UCwtGZpPF6k3Yz4AYk (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkMFoyUVU0MlZVTjNkRWRhY0ZCR05tc3pXWG8wUVZsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhR1Z5YjE5emRISnBhMlV1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG9aWEp2WDNOMGNtbHJaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDMtMTNUMTQ6MTI6MTYuODg4WiIsInB1ciI6ImJsb2Jfa2V5In19--7d9196f434d10184d4c23c84575eca34e5efbc2b/hero_strike.png?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22hero_strike.png%22%3B+filename%2A%3DUTF-8%27%27hero_strike.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkMFoyUVU0MlZVTjNkRWRhY0ZCR05tc3pXWG8wUVZsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhR1Z5YjE5emRISnBhMlV1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG9aWEp2WDNOMGNtbHJaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDMtMTNUMTQ6MTI6MTYuODg4WiIsInB1ciI6ImJsb2Jfa2V5In19--7d9196f434d10184d4c23c84575eca34e5efbc2b/hero_strike.png?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22hero_strike.png%22%3B+filename%2A%3DUTF-8%27%27hero_strike.png
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkMFoyUVU0MlZVTjNkRWRhY0ZCR05tc3pXWG8wUVZsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhR1Z5YjE5emRISnBhMlV1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG9aWEp2WDNOMGNtbHJaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDMtMTNUMTQ6MTI6MTYuODg4WiIsInB1ciI6ImJsb2Jfa2V5In19--7d9196f434d10184d4c23c84575eca34e5efbc2b/hero_strike.png?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22hero_strike.png%22%3B+filename%2A%3DUTF-8%27%27hero_strike.png" for ::1 at 2020-03-13 11:07:16 -0300
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"hero_strike.png\"; filename*=UTF-8''hero_strike.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkMFoyUVU0MlZVTjNkRWRhY0ZCR05tc3pXWG8wUVZsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhR1Z5YjE5emRISnBhMlV1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG9aWEp2WDNOMGNtbHJaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDMtMTNUMTQ6MTI6MTYuODg4WiIsInB1ciI6ImJsb2Jfa2V5In19--7d9196f434d10184d4c23c84575eca34e5efbc2b", "filename"=>"hero_strike"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/products/3" for ::1 at 2020-03-13 11:08:33 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:74
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  Rendered products/show.html.erb within layouts/application (5.5ms)
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 98ms (Views: 93.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkMFoyUVU0MlZVTjNkRWRhY0ZCR05tc3pXWG8wUVZsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhR1Z5YjE5emRISnBhMlV1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG9aWEp2WDNOMGNtbHJaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDMtMTNUMTQ6MTI6MTYuODg4WiIsInB1ciI6ImJsb2Jfa2V5In19--7d9196f434d10184d4c23c84575eca34e5efbc2b/hero_strike.png?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22hero_strike.png%22%3B+filename%2A%3DUTF-8%27%27hero_strike.png" for ::1 at 2020-03-13 11:08:33 -0300
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"hero_strike.png\"; filename*=UTF-8''hero_strike.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkMFoyUVU0MlZVTjNkRWRhY0ZCR05tc3pXWG8wUVZsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhR1Z5YjE5emRISnBhMlV1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG9aWEp2WDNOMGNtbHJaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDMtMTNUMTQ6MTI6MTYuODg4WiIsInB1ciI6ImJsb2Jfa2V5In19--7d9196f434d10184d4c23c84575eca34e5efbc2b", "filename"=>"hero_strike"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/products/5" for ::1 at 2020-03-13 11:09:19 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:74
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  Rendered products/show.html.erb within layouts/application (2.7ms)
+  Rendered shared/_navbar.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 114ms (Views: 108.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/products/3" for ::1 at 2020-03-13 11:10:38 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:74
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  Rendered products/show.html.erb within layouts/application (4.5ms)
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 91ms (Views: 87.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkMFoyUVU0MlZVTjNkRWRhY0ZCR05tc3pXWG8wUVZsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhR1Z5YjE5emRISnBhMlV1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG9aWEp2WDNOMGNtbHJaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDMtMTNUMTQ6MTI6MTYuODg4WiIsInB1ciI6ImJsb2Jfa2V5In19--7d9196f434d10184d4c23c84575eca34e5efbc2b/hero_strike.png?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22hero_strike.png%22%3B+filename%2A%3DUTF-8%27%27hero_strike.png" for ::1 at 2020-03-13 11:10:38 -0300
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"hero_strike.png\"; filename*=UTF-8''hero_strike.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkMFoyUVU0MlZVTjNkRWRhY0ZCR05tc3pXWG8wUVZsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhR1Z5YjE5emRISnBhMlV1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG9aWEp2WDNOMGNtbHJaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDMtMTNUMTQ6MTI6MTYuODg4WiIsInB1ciI6ImJsb2Jfa2V5In19--7d9196f434d10184d4c23c84575eca34e5efbc2b", "filename"=>"hero_strike"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for ::1 at 2020-03-13 11:10:51 -0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 94ms (Views: 90.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for ::1 at 2020-03-13 11:10:55 -0300
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:20
+  Rendered products/index.html.erb within layouts/application (2.6ms)
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 106ms (Views: 101.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/5" for ::1 at 2020-03-13 11:10:57 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:74
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  Rendered products/show.html.erb within layouts/application (5.4ms)
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 90ms (Views: 84.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/5" for ::1 at 2020-03-13 11:12:43 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:74
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (38.9ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:14: syntax error, unexpected '<'
+...reeze;@output_buffer.append=( <h2>SIN IMAGEN DISPONIBLE</h2>...
+...                              ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:14: syntax error, unexpected tCONSTANT, expecting do or '{' or '('
+..._buffer.append=( <h2>SIN IMAGEN DISPONIBLE</h2> );@output_bu...
+...                         ^~~~~~
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:17: unknown regexp options - dv
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:17: unmatched close parenthesis: /h2> );@output_buffer.safe_append='
+'.freeze;      end
+@output_buffer.safe_append='
+    </i
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:18: syntax error, unexpected '<'
+    <div class="col-4">
+    ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:19: syntax error, unexpected '<'
+      <p>
+      ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:20: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+        <strong>Sku:</strong>
+                   ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:22: syntax error, unexpected '<', expecting ')'
+      </p>
+      ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:25: unknown regexp options - trg
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:27: syntax error, unexpected '<', expecting ')'
+      </p>
+      ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:30: unknown regexp options - trg
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:32: syntax error, unexpected '<', expecting ')'
+      </p>
+      ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:35: unknown regexp options - trg
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:37: syntax error, unexpected '<', expecting ')'
+      </p>
+      ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:40: unknown regexp options - trg
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:42: syntax error, unexpected '<', expecting ')'
+      </p>
+      ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:45: unknown regexp options - trg
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:47: syntax error, unexpected '<', expecting ')'
+      </p>
+      ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:50: unknown regexp options - trg
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:52: syntax error, unexpected '<', expecting ')'
+      </p>
+      ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:53: unknown regexp options - dv
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:54: syntax error, unexpected '<'
+    </div>
+    ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:55: unknown regexp options - dv
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:58: syntax error, unexpected tCONSTANT, expecting ')'
+...t_buffer.append=( link_to 'Edit', edit_product_path(@product...
+...                           ^~~~
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:59: syntax error, unexpected tCONSTANT, expecting ')'
+...t_buffer.append=( link_to 'Back', products_path );
+...                           ^~~~
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:64: unterminated string meets end of file
+          end
+              ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:64: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/products/show.html.erb:14: syntax error, unexpected '<'
+app/views/products/show.html.erb:14: syntax error, unexpected tCONSTANT, expecting do or '{' or '('
+app/views/products/show.html.erb:17: unknown regexp options - dv
+app/views/products/show.html.erb:17: unmatched close parenthesis: /h2> );@output_buffer.safe_append='
+app/views/products/show.html.erb:18: syntax error, unexpected '<'
+app/views/products/show.html.erb:19: syntax error, unexpected '<'
+app/views/products/show.html.erb:20: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+app/views/products/show.html.erb:22: syntax error, unexpected '<', expecting ')'
+app/views/products/show.html.erb:25: unknown regexp options - trg
+app/views/products/show.html.erb:27: syntax error, unexpected '<', expecting ')'
+app/views/products/show.html.erb:30: unknown regexp options - trg
+app/views/products/show.html.erb:32: syntax error, unexpected '<', expecting ')'
+app/views/products/show.html.erb:35: unknown regexp options - trg
+app/views/products/show.html.erb:37: syntax error, unexpected '<', expecting ')'
+app/views/products/show.html.erb:40: unknown regexp options - trg
+app/views/products/show.html.erb:42: syntax error, unexpected '<', expecting ')'
+app/views/products/show.html.erb:45: unknown regexp options - trg
+app/views/products/show.html.erb:47: syntax error, unexpected '<', expecting ')'
+app/views/products/show.html.erb:50: unknown regexp options - trg
+app/views/products/show.html.erb:52: syntax error, unexpected '<', expecting ')'
+app/views/products/show.html.erb:53: unknown regexp options - dv
+app/views/products/show.html.erb:54: syntax error, unexpected '<'
+app/views/products/show.html.erb:55: unknown regexp options - dv
+app/views/products/show.html.erb:58: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/products/show.html.erb:59: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/products/show.html.erb:64: unterminated string meets end of file
+app/views/products/show.html.erb:64: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/products/5" for ::1 at 2020-03-13 11:13:27 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:74
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:14: syntax error, unexpected '<'
+...reeze;@output_buffer.append=( <h2> "SIN IMAGEN DISPONIBLE" <...
+...                              ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:17: unknown regexp options - dv
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:17: unmatched close parenthesis: /h2> );@output_buffer.safe_append='
+'.freeze;      end
+@output_buffer.safe_append='
+    </i
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:18: syntax error, unexpected '<'
+    <div class="col-4">
+    ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:19: syntax error, unexpected '<'
+      <p>
+      ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:20: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+        <strong>Sku:</strong>
+                   ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:22: syntax error, unexpected '<', expecting ')'
+      </p>
+      ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:25: unknown regexp options - trg
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:27: syntax error, unexpected '<', expecting ')'
+      </p>
+      ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:30: unknown regexp options - trg
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:32: syntax error, unexpected '<', expecting ')'
+      </p>
+      ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:35: unknown regexp options - trg
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:37: syntax error, unexpected '<', expecting ')'
+      </p>
+      ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:40: unknown regexp options - trg
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:42: syntax error, unexpected '<', expecting ')'
+      </p>
+      ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:45: unknown regexp options - trg
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:47: syntax error, unexpected '<', expecting ')'
+      </p>
+      ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:50: unknown regexp options - trg
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:52: syntax error, unexpected '<', expecting ')'
+      </p>
+      ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:53: unknown regexp options - dv
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:54: syntax error, unexpected '<'
+    </div>
+    ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:55: unknown regexp options - dv
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:58: syntax error, unexpected tCONSTANT, expecting ')'
+...t_buffer.append=( link_to 'Edit', edit_product_path(@product...
+...                           ^~~~
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:59: syntax error, unexpected tCONSTANT, expecting ')'
+...t_buffer.append=( link_to 'Back', products_path );
+...                           ^~~~
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:64: unterminated string meets end of file
+          end
+              ^
+/home/bazt/Escritorio/project/wms/app/views/products/show.html.erb:64: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/products/show.html.erb:14: syntax error, unexpected '<'
+app/views/products/show.html.erb:17: unknown regexp options - dv
+app/views/products/show.html.erb:17: unmatched close parenthesis: /h2> );@output_buffer.safe_append='
+app/views/products/show.html.erb:18: syntax error, unexpected '<'
+app/views/products/show.html.erb:19: syntax error, unexpected '<'
+app/views/products/show.html.erb:20: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+app/views/products/show.html.erb:22: syntax error, unexpected '<', expecting ')'
+app/views/products/show.html.erb:25: unknown regexp options - trg
+app/views/products/show.html.erb:27: syntax error, unexpected '<', expecting ')'
+app/views/products/show.html.erb:30: unknown regexp options - trg
+app/views/products/show.html.erb:32: syntax error, unexpected '<', expecting ')'
+app/views/products/show.html.erb:35: unknown regexp options - trg
+app/views/products/show.html.erb:37: syntax error, unexpected '<', expecting ')'
+app/views/products/show.html.erb:40: unknown regexp options - trg
+app/views/products/show.html.erb:42: syntax error, unexpected '<', expecting ')'
+app/views/products/show.html.erb:45: unknown regexp options - trg
+app/views/products/show.html.erb:47: syntax error, unexpected '<', expecting ')'
+app/views/products/show.html.erb:50: unknown regexp options - trg
+app/views/products/show.html.erb:52: syntax error, unexpected '<', expecting ')'
+app/views/products/show.html.erb:53: unknown regexp options - dv
+app/views/products/show.html.erb:54: syntax error, unexpected '<'
+app/views/products/show.html.erb:55: unknown regexp options - dv
+app/views/products/show.html.erb:58: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/products/show.html.erb:59: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/products/show.html.erb:64: unterminated string meets end of file
+app/views/products/show.html.erb:64: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/products/5" for ::1 at 2020-03-13 11:13:54 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:74
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  Rendered products/show.html.erb within layouts/application (2.7ms)
+  Rendered shared/_navbar.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 109ms (Views: 104.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/5" for ::1 at 2020-03-13 11:14:04 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:74
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  Rendered products/show.html.erb within layouts/application (4.0ms)
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 93ms (Views: 87.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/products/5" for ::1 at 2020-03-13 11:14:05 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:74
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  Rendered products/show.html.erb within layouts/application (2.7ms)
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 112ms (Views: 107.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/5" for ::1 at 2020-03-13 11:14:23 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:74
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  Rendered products/show.html.erb within layouts/application (2.7ms)
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 88ms (Views: 82.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/welcome/index" for ::1 at 2020-03-13 11:14:25 -0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 98ms (Views: 94.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for ::1 at 2020-03-13 11:14:27 -0300
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:20
+  Rendered products/index.html.erb within layouts/application (2.4ms)
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 87ms (Views: 82.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/3" for ::1 at 2020-03-13 11:14:29 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:74
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:7
+  Rendered products/show.html.erb within layouts/application (4.7ms)
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 102ms (Views: 96.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f00284fbb877100cc8197809667f309ee5b5df79/hero_strike.png" for ::1 at 2020-03-13 11:14:29 -0300
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f00284fbb877100cc8197809667f309ee5b5df79", "filename"=>"hero_strike"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (1.0ms) [0m[34mGenerated URL for file at key: wFvAN6UCwtGZpPF6k3Yz4AYk (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkMFoyUVU0MlZVTjNkRWRhY0ZCR05tc3pXWG8wUVZsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhR1Z5YjE5emRISnBhMlV1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG9aWEp2WDNOMGNtbHJaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDMtMTNUMTQ6MTk6MjkuNjYxWiIsInB1ciI6ImJsb2Jfa2V5In19--f0aeb39d05ba006a9dee5812682611c67133ec79/hero_strike.png?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22hero_strike.png%22%3B+filename%2A%3DUTF-8%27%27hero_strike.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkMFoyUVU0MlZVTjNkRWRhY0ZCR05tc3pXWG8wUVZsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhR1Z5YjE5emRISnBhMlV1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG9aWEp2WDNOMGNtbHJaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDMtMTNUMTQ6MTk6MjkuNjYxWiIsInB1ciI6ImJsb2Jfa2V5In19--f0aeb39d05ba006a9dee5812682611c67133ec79/hero_strike.png?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22hero_strike.png%22%3B+filename%2A%3DUTF-8%27%27hero_strike.png
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkMFoyUVU0MlZVTjNkRWRhY0ZCR05tc3pXWG8wUVZsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhR1Z5YjE5emRISnBhMlV1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG9aWEp2WDNOMGNtbHJaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDMtMTNUMTQ6MTk6MjkuNjYxWiIsInB1ciI6ImJsb2Jfa2V5In19--f0aeb39d05ba006a9dee5812682611c67133ec79/hero_strike.png?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22hero_strike.png%22%3B+filename%2A%3DUTF-8%27%27hero_strike.png" for ::1 at 2020-03-13 11:14:29 -0300
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"hero_strike.png\"; filename*=UTF-8''hero_strike.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRkMFoyUVU0MlZVTjNkRWRhY0ZCR05tc3pXWG8wUVZsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhR1Z5YjE5emRISnBhMlV1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG9aWEp2WDNOMGNtbHJaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjAtMDMtMTNUMTQ6MTk6MjkuNjYxWiIsInB1ciI6ImJsb2Jfa2V5In19--f0aeb39d05ba006a9dee5812682611c67133ec79", "filename"=>"hero_strike"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for ::1 at 2020-03-13 11:14:39 -0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 93ms (Views: 89.4ms | ActiveRecord: 0.3ms)
+
+
