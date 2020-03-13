@@ -54,8 +54,6 @@
       <li class="nav-item active">
     <% if user_signed_in? %>
 	        	<li><%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, :class => "nav-link font-weight-bold" %>
-	        <% else %>
-	        	<li><%= link_to 'Inicia sesión', new_user_session_path, :class => "nav-link font-weight-bold" %>
 	        <% end %>
     </li>
     </ul>

@@ -62,6 +62,12 @@ class ProductsController < ApplicationController
     end
   end
 
+  def delete_image
+    @image =ActiveStorage::Attachment.find(params[:image_id])
+    @image.purge
+    redirect_to product_path(@product)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
@@ -70,6 +76,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:sku, :name, :ean, :proveder, :category, :subcategory, :active)
+      params.require(:product).permit(:sku, :name, :ean, :proveder, :category, :subcategory, :active, :image)
     end
 end
