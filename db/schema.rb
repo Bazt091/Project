@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_13_154855) do
+ActiveRecord::Schema.define(version: 2020_03_16_151414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -156,12 +156,19 @@ ActiveRecord::Schema.define(version: 2020_03_13_154855) do
     t.string "sku"
     t.string "name"
     t.bigint "ean"
-    t.string "proveder"
+    t.string "provider"
     t.string "category"
     t.string "subcategory"
     t.boolean "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "provider_id"
+    t.index ["provider_id"], name: "index_products_on_provider_id"
+  end
+
+  create_table "products_providers", id: false, force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.bigint "provider_id", null: false
   end
 
   create_table "products_stock_by_locations", id: false, force: :cascade do |t|
@@ -216,6 +223,7 @@ ActiveRecord::Schema.define(version: 2020_03_13_154855) do
   add_foreign_key "info_dispatch_orders", "users"
   add_foreign_key "info_purchase_orders", "providers"
   add_foreign_key "info_purchase_orders", "users"
+  add_foreign_key "products", "providers"
   add_foreign_key "stock_by_locations", "locations"
   add_foreign_key "stock_by_locations", "products"
 end

@@ -11,47 +11,51 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :sku %>
-    <%= form.text_field :sku %>
-  </div>
+<div class='container'>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+    <div class="field">
+      <%= form.label :sku %><br>
+      <%= form.text_field :sku %>
+    </div>
 
-  <div class="field">
-    <%= form.label :ean %>
-    <%= form.text_field :ean %>
-  </div>
+    <div class="field">
+      <%= form.label :nombre %><br>
+      <%= form.text_field :name %>
+    </div>
 
-  <div class="field">
-    <%= form.label :proveder %>
-    <%= form.text_field :proveder %>
-  </div>
+    <div class="field">
+      <%= form.label :EAN %><br>
+      <%= form.text_field :ean %>
+    </div>
 
-  <div class="field">
-    <%= form.label :category %>
-    <%= form.text_field :category %>
-  </div>
+    <div class="field">
+      <%= form.label :Proveedor %><br>
+      <%= form.select :provider_id, Provider.all.pluck(:name, :id) %>
+    </div>
 
-  <div class="field">
-    <%= form.label :subcategory %>
-    <%= form.text_field :subcategory %>
-  </div>
+    <div class="field">
+      <%= form.label :Categoria %><br>
+      <%= form.text_field :category %>
+    </div>
 
-  <div class="field">
-    <%= form.label :active %>
-    <%= form.check_box :active %>
-  </div>
+    <div class="field">
+      <%= form.label :SubCategoria %><br>
+      <%= form.text_field :subcategory %>
+    </div>
 
-  <div class="field">
-    <%= form.label :image%>
-    <%= form.file_field :image%>
-  </div>
+    <div class="field">
+      <%= form.label :Activo? %>
+      <%= form.check_box :active %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+    <div class="field">
+      <%= form.label :Imagen%><br>
+      <%= form.file_field :image%>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+
+</div>

@@ -4,7 +4,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :sku
       t.string :name
       t.bigint :ean
-      t.string :proveder
+      t.string :provider
       t.string :category
       t.string :subcategory
       t.boolean :active
