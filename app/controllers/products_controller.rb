@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @stock_by_location = StockByLocation.all
   end
 
   # GET /products/new

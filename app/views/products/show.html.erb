@@ -3,7 +3,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-8">
+    <div class="col-6">
       <% if @product.image.attached? %>
         <p>
           <strong>Imagen:</strong><br>
@@ -15,7 +15,7 @@
       <%end%>
 
     </div>
-    <div class="col-4">
+    <div class="col-6">
       <p>
         <strong>Sku:</strong>
         <%= @product.sku %>
@@ -50,6 +50,32 @@
         <strong>Activo:</strong>
         <%= @product.active %>
       </p>
+
+      <p>
+      <h4>Ubicaciones Disponibles</h4>
+      <table>
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Product</th>
+      <th>Product quantity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stock_by_location.each do |stock_by_location| %>
+      <tr>
+        <td><%= stock_by_location.location.name %></td>
+        <td><%= stock_by_location.product.name %></td>
+        <td><%= stock_by_location.product_quantity %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+      </p>
+     
+
       </div>
     </div>
 </div>

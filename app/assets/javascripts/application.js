@@ -13,4 +13,10 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+//= require jquery/dist/jquery
+//= require moment/moment
+//= require fullcalendar/dist/fullcalendar
+//= require fullcalendar/dist/locale/es
+//= require popper.js/dist/umd/popper
+//= require bootstrap/dist/js/bootstrap
+//= require welcome

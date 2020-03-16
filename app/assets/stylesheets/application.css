@@ -10,17 +10,21 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+  *= require_tree .
  *= require_self
+ *= require fullcalendar/dist/fullcalendar
+ *= require bootstrap/dist/css/bootstrap
  */
 
-* html {
-    min-height: 100%;
-    position: relative;
+ html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
   }
-  body {
-
-  }
-  footer {
   
+  #calendar {
+    max-width: 900px;
+    margin: 40px auto;
   }
+
