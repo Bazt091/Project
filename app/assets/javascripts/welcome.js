@@ -1,3 +1,4 @@
+
 $(document).on('ready turbolinks:load', function(){
   
     var token = $( 'meta[name="csrf-token"]' ).attr( 'content' );
