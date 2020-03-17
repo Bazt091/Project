@@ -60,4 +60,4 @@ contact: 'Pepito Pepito'
 
 Location.create(
     name: "Cuarentena",
-    category: "NO DISPONIBLE"
+    category: "NO DISPONIBLE")
