@@ -1,5 +1,6 @@
 class InfoDispatchOrdersController < ApplicationController
   before_action :set_info_dispatch_order, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /info_dispatch_orders
   # GET /info_dispatch_orders.json

@@ -1,5 +1,6 @@
 class StockByLocationsController < ApplicationController
   before_action :set_stock_by_location, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /stock_by_locations
   # GET /stock_by_locations.json

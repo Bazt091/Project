@@ -1,5 +1,6 @@
 class InfoPurchaseOrdersController < ApplicationController
   before_action :set_info_purchase_order, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /info_purchase_orders
   # GET /info_purchase_orders.json

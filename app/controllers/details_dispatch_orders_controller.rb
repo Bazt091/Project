@@ -1,5 +1,6 @@
 class DetailsDispatchOrdersController < ApplicationController
   before_action :set_details_dispatch_order, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /details_dispatch_orders
   # GET /details_dispatch_orders.json
