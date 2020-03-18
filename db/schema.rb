@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_16_151414) do
+ActiveRecord::Schema.define(version: 2020_03_18_123537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,7 +87,6 @@ ActiveRecord::Schema.define(version: 2020_03_16_151414) do
     t.bigint "info_dispatch_order_id"
     t.bigint "product_id"
     t.integer "product_quantity"
-    t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["info_dispatch_order_id"], name: "index_details_dispatch_orders_on_info_dispatch_order_id"
@@ -98,7 +97,6 @@ ActiveRecord::Schema.define(version: 2020_03_16_151414) do
     t.bigint "info_purchase_order_id"
     t.bigint "product_id"
     t.integer "product_quantity"
-    t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["info_purchase_order_id"], name: "index_details_purchase_orders_on_info_purchase_order_id"
@@ -114,10 +112,8 @@ ActiveRecord::Schema.define(version: 2020_03_16_151414) do
 
   create_table "info_dispatch_orders", force: :cascade do |t|
     t.bigint "client_id"
-    t.string "client_name"
     t.string "client_order_purchase"
     t.bigint "user_id"
-    t.string "user_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_info_dispatch_orders_on_client_id"
@@ -126,9 +122,7 @@ ActiveRecord::Schema.define(version: 2020_03_16_151414) do
 
   create_table "info_purchase_orders", force: :cascade do |t|
     t.bigint "provider_id"
-    t.string "provider_name"
     t.bigint "user_id"
-    t.string "user_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["provider_id"], name: "index_info_purchase_orders_on_provider_id"

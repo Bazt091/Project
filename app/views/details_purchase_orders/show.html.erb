@@ -2,12 +2,12 @@
 
 <p>
   <strong>Info purchase order:</strong>
-  <%= @details_purchase_order.info_purchase_order %>
+  <%= @details_purchase_order.info_purchase_order.id %>
 </p>
 
 <p>
   <strong>Product:</strong>
-  <%= @details_purchase_order.product %>
+  <%= @details_purchase_order.product.name %>
 </p>
 
 <p>
@@ -15,10 +15,6 @@
   <%= @details_purchase_order.product_quantity %>
 </p>
 
-<p>
-  <strong>Comment:</strong>
-  <%= @details_purchase_order.comment %>
-</p>
 
 <%= link_to 'Edit', edit_details_purchase_order_path(@details_purchase_order) %> |
 <%= link_to 'Back', details_purchase_orders_path %>

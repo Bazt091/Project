@@ -1,23 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Provider:</strong>
-  <%= @info_purchase_order.provider %>
+  <strong>Numero Orden de Despacho:</strong>
+  <%= @info_purchase_order.id %>
 </p>
 
 <p>
-  <strong>Provider name:</strong>
-  <%= @info_purchase_order.provider_name %>
+  <strong>Provider:</strong>
+  <%= @info_purchase_order.provider.name %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @info_purchase_order.user %>
-</p>
-
-<p>
-  <strong>User name:</strong>
-  <%= @info_purchase_order.user_name %>
+  <%= @info_purchase_order.user.email %>
 </p>
 
 <%= link_to 'Edit', edit_info_purchase_order_path(@info_purchase_order) %> |

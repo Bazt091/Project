@@ -13,22 +13,17 @@
 
   <div class="field">
     <%= form.label :info_dispatch_order_id %>
-    <%= form.text_field :info_dispatch_order_id %>
+    <%= form.select :info_dispatch_order_id, InfoDispatchOrder.all.pluck(:id) %>
   </div>
 
   <div class="field">
     <%= form.label :product_id %>
-    <%= form.text_field :product_id %>
+    <%= form.select :product_id, Product.all.pluck(:name, :id) %>
   </div>
 
   <div class="field">
     <%= form.label :product_quantity %>
     <%= form.number_field :product_quantity %>
-  </div>
-
-  <div class="field">
-    <%= form.label :comment %>
-    <%= form.text_area :comment %>
   </div>
 
   <div class="actions">

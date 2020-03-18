@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Client:</strong>
-  <%= @info_dispatch_order.client %>
+  <strong>Numero Orden de Despacho:</strong>
+  <%= @info_dispatch_order.id %>
 </p>
 
 <p>
-  <strong>Client name:</strong>
-  <%= @info_dispatch_order.client_name %>
+  <strong>Client:</strong>
+  <%= @info_dispatch_order.client.name %>
 </p>
 
 <p>
@@ -16,13 +16,8 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @info_dispatch_order.user %>
-</p>
-
-<p>
-  <strong>User name:</strong>
-  <%= @info_dispatch_order.user_name %>
+  <strong>Ejecutivo:</strong>
+  <%= @info_dispatch_order.user.email %>
 </p>
 
 <%= link_to 'Edit', edit_info_dispatch_order_path(@info_dispatch_order) %> |

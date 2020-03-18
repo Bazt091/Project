@@ -5,10 +5,10 @@
 <table>
   <thead>
     <tr>
-      <th>Nº</th>
+      <th>Nº Orden de Despacho</th>
       <th>Cliente</th>
-      <th>Client order purchase</th>
-      <th>User name</th>
+      <th>Orden de Compra de Cliente</th>
+      <th>Usuario</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,9 +17,9 @@
     <% @info_dispatch_orders.each do |info_dispatch_order| %>
       <tr>
         <td><%= info_dispatch_order.id %></td>
-        <td><%= info_dispatch_order.client_name %></td>
+        <td><%= info_dispatch_order.client.name %></td>
         <td><%= info_dispatch_order.client_order_purchase %></td>
-        <td><%= info_dispatch_order.user_name %></td>
+        <td><%= info_dispatch_order.user.email %></td>
         <td><%= link_to 'Show', info_dispatch_order %></td>
         <td><%= link_to 'Edit', edit_info_dispatch_order_path(info_dispatch_order) %></td>
         <td><%= link_to 'Destroy', info_dispatch_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>

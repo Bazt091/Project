@@ -11,27 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :provider_id %>
-    <%= form.text_field :provider_id %>
-  </div>
+<div class='container'>
+    <div class="field-control">
+      <%= form.label :provider_id %><br>
+      <%= form.select :provider_id, Provider.all.pluck(:name, :id) %>
+    </div>
 
-  <div class="field">
-    <%= form.label :provider_name %>
-    <%= form.text_field :provider_name %>
-  </div>
+    <div class="field">
+      <%= form.label :user_id %><br>
+      <%= form.select :user_id, User.all.pluck(:email, :id) %>
+    </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_name %>
-    <%= form.text_field :user_name %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>

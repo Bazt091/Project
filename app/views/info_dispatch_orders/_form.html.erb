@@ -11,32 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field-control">
-    <%= form.label :client_id %>
-    <%= form.text_field :client_id %>
-  </div>
+<div class='container'>
+    <div class="field-control">
+      <%= form.label :client_id %><br>
+      <%= form.select :client_id, Client.all.pluck(:name, :id) %>
+    </div>
 
-  <div class="field">
-    <%= form.label :client_name %>
-    <%= form.text_field :client_name %>
-  </div>
+    <div class="field">
+      <%= form.label :client_order_purchase %><br>
+      <%= form.text_field :client_order_purchase %>
+    </div>
 
-  <div class="field">
-    <%= form.label :client_order_purchase %>
-    <%= form.text_field :client_order_purchase %>
-  </div>
+    <div class="field">
+      <%= form.label :user_id %><br>
+      <%= form.select :user_id, User.all.pluck(:email, :id) %>
+    </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_name %>
-    <%= form.text_field :user_name %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>

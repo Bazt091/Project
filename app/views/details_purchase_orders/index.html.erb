@@ -8,7 +8,6 @@
       <th>Info purchase order</th>
       <th>Product</th>
       <th>Product quantity</th>
-      <th>Comment</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,10 +15,9 @@
   <tbody>
     <% @details_purchase_orders.each do |details_purchase_order| %>
       <tr>
-        <td><%= details_purchase_order.info_purchase_order %></td>
-        <td><%= details_purchase_order.product %></td>
+        <td><%= details_purchase_order.info_purchase_order.id %></td>
+        <td><%= details_purchase_order.product.name %></td>
         <td><%= details_purchase_order.product_quantity %></td>
-        <td><%= details_purchase_order.comment %></td>
         <td><%= link_to 'Show', details_purchase_order %></td>
         <td><%= link_to 'Edit', edit_details_purchase_order_path(details_purchase_order) %></td>
         <td><%= link_to 'Destroy', details_purchase_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
