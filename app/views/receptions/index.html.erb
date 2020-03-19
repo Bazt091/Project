@@ -5,8 +5,11 @@
 <table>
   <thead>
     <tr>
-      <th>Details purchase orders</th>
-      <th>Quantity ok</th>
+      <th>Numero de Orden</th>
+      <th>Nombre de Producto</th>
+      <th>Cantidad Solicitada</th>
+      <th>Cantidad Ingresada</th>
+      <th>Cantidad Pendiente</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,8 +17,11 @@
   <tbody>
     <% @receptions.each do |reception| %>
       <tr>
+        <td><%= reception.details_purchase_order.info_purchase_order.id  %></td>
+        <td><%= reception.details_purchase_order.product.name  %></td>
+        <td><%= reception.original_quantity %></td>
         <td><%= reception.quantity_ok %></td>
-        <td><%= link_to 'Show', reception %></td>
+        <td><%= reception.pending_quantity %></td>
         <td><%= link_to 'Edit', edit_reception_path(reception) %></td>
         <td><%= link_to 'Destroy', reception, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

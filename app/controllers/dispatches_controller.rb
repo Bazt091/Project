@@ -1,5 +1,10 @@
 class DispatchesController < InheritedResources::Base
 
+  def index
+    @dispatches = Dispatch.all
+    @details_dispatch_orders = DetailsDispatchOrder.all
+  end
+  
   private
 
     def dispatch_params

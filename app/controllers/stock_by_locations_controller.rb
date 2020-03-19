@@ -6,7 +6,6 @@ class StockByLocationsController < ApplicationController
   # GET /stock_by_locations.json
   def index
     @stock_by_locations = StockByLocation.all
-    #@location = Location.all
     @product = Product.all
   end
 

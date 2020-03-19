@@ -5,8 +5,11 @@
 <table>
   <thead>
     <tr>
-      <th>Details dispatch orders</th>
-      <th>Quantity ok</th>
+      <th>Numero de Orden</th>
+      <th>Nombre de Producto</th>
+      <th>Cantidad Solicitada</th>
+      <th>Cantidad Ingresada</th>
+      <th>Cantidad Pendiente</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,9 +17,11 @@
   <tbody>
     <% @dispatches.each do |dispatch| %>
       <tr>
-        <td><%= dispatch.details_dispatch_orders_id %></td>
+        <td><%= dispatch.details_dispatch_order.info_dispatch_order.id  %></td>
+        <td><%= dispatch.details_dispatch_order.product.name %></td>
+        <td><%= dispatch.original_quantity %></td>
         <td><%= dispatch.quantity_ok %></td>
-        <td><%= link_to 'Show', dispatch %></td>
+        <td><%= dispatch.pending_quantity %></td>
         <td><%= link_to 'Edit', edit_dispatch_path(dispatch) %></td>
         <td><%= link_to 'Destroy', dispatch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
