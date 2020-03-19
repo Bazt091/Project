@@ -48383,3 +48383,620 @@ Processing by ReceptionsController#index as HTML
 Completed 200 OK in 263ms (Views: 224.7ms | ActiveRecord: 31.6ms)
 
 
+Started GET "/receptions" for ::1 at 2020-03-19 15:30:45 -0300
+Processing by ReceptionsController#index as HTML
+  Rendering receptions/index.html.erb within layouts/application
+  [1m[36mReception Load (0.9ms)[0m  [1m[34mSELECT "receptions".* FROM "receptions"[0m
+  ↳ app/views/receptions/index.html.erb:18
+  [1m[36mDetailsPurchaseOrder Load (1.8ms)[0m  [1m[34mSELECT  "details_purchase_orders".* FROM "details_purchase_orders" WHERE "details_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/receptions/index.html.erb:20
+  [1m[36mInfoPurchaseOrder Load (0.8ms)[0m  [1m[34mSELECT  "info_purchase_orders".* FROM "info_purchase_orders" WHERE "info_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/receptions/index.html.erb:20
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/receptions/index.html.erb:21
+  Rendered receptions/index.html.erb within layouts/application (132.6ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:49
+  Rendered shared/_navbar.html.erb (28.7ms)
+  Rendered shared/_footer.html.erb (1.5ms)
+Completed 200 OK in 279ms (Views: 225.0ms | ActiveRecord: 46.6ms)
+
+
+Started GET "/receptions/4/edit" for ::1 at 2020-03-19 15:30:50 -0300
+Processing by ReceptionsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mReception Load (0.5ms)[0m  [1m[34mSELECT  "receptions".* FROM "receptions" WHERE "receptions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/receptions_controller.rb:13
+  Rendering receptions/edit.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "info_purchase_orders"."id" FROM "info_purchase_orders"[0m
+  ↳ app/views/receptions/_form.html.erb:16
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "name", "details_purchase_orders"."id" FROM "details_purchase_orders" LEFT OUTER JOIN "products" ON "products"."id" = "details_purchase_orders"."product_id"[0m
+  ↳ app/views/receptions/_form.html.erb:21
+  Rendered receptions/_form.html.erb (17.6ms)
+  Rendered receptions/edit.html.erb within layouts/application (21.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:49
+  Rendered shared/_navbar.html.erb (6.1ms)
+  Rendered shared/_footer.html.erb (1.1ms)
+Completed 200 OK in 242ms (Views: 233.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/search_details?id=4&_=1584642646771" for ::1 at 2020-03-19 15:30:53 -0300
+Processing by SearchDetailsController#index as JS
+  Parameters: {"id"=>"4", "_"=>"1584642646771"}
+  Rendering search_details/index.js.erb
+  [1m[36mDetailsPurchaseOrder Load (0.5ms)[0m  [1m[34mSELECT "details_purchase_orders".* FROM "details_purchase_orders" WHERE "details_purchase_orders"."info_purchase_order_id" = $1[0m  [["info_purchase_order_id", 4]]
+  ↳ app/views/search_details/index.js.erb:2
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/search_details/index.js.erb:3
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/search_details/index.js.erb:3
+  Rendered search_details/index.js.erb (9.6ms)
+Completed 200 OK in 28ms (Views: 18.6ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/receptions/4" for ::1 at 2020-03-19 15:30:56 -0300
+Processing by ReceptionsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G5IPsJfMfrxisPCT+md9/NQvhEqEtS3Ozi77kuzIDf5lRxmleDrc5zSB1ma5HA+HZMokyUskR46SZX9SWxXDOA==", "reception"=>{"info_purchase_orders_id"=>"4", "details_purchase_orders_id"=>"5", "quantity_ok"=>"5"}, "commit"=>"Update Reception", "id"=>"4"}
+  [1m[36mReception Load (0.5ms)[0m  [1m[34mSELECT  "receptions".* FROM "receptions" WHERE "receptions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/receptions_controller.rb:13
+Unpermitted parameter: :info_purchase_orders_id
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mDetailsPurchaseOrder Load (0.5ms)[0m  [1m[34mSELECT  "details_purchase_orders".* FROM "details_purchase_orders" WHERE "details_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/receptions/4
+Completed 302 Found in 20ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/receptions/4" for ::1 at 2020-03-19 15:30:56 -0300
+Processing by ReceptionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mReception Load (1.0ms)[0m  [1m[34mSELECT  "receptions".* FROM "receptions" WHERE "receptions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template receptions/show, inherited_resources/base/show, application/show with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :arb, :coffee, :jbuilder]}. Searched in:
+  * "/home/bazt/Escritorio/project/wms/app/views"
+  * "/home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views"
+  * "/home/bazt/.rvm/gems/ruby-2.6.4/gems/kaminari-core-1.2.0/app/views"
+  * "/home/bazt/.rvm/gems/ruby-2.6.4/gems/devise-4.7.1/app/views"
+):
+  
+actionview (5.2.4.1) lib/action_view/path_set.rb:48:in `find'
+actionview (5.2.4.1) lib/action_view/lookup_context.rb:116:in `find'
+actionview (5.2.4.1) lib/action_view/renderer/abstract_renderer.rb:20:in `find_template'
+actionview (5.2.4.1) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+actionview (5.2.4.1) lib/action_view/renderer/template_renderer.rb:10:in `render'
+actionview (5.2.4.1) lib/action_view/renderer/renderer.rb:44:in `render_template'
+actionview (5.2.4.1) lib/action_view/renderer/renderer.rb:25:in `render'
+actionview (5.2.4.1) lib/action_view/rendering.rb:103:in `_render_template'
+actionpack (5.2.4.1) lib/action_controller/metal/streaming.rb:219:in `_render_template'
+actionview (5.2.4.1) lib/action_view/rendering.rb:84:in `render_to_body'
+actionpack (5.2.4.1) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (5.2.4.1) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (5.2.4.1) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (5.2.4.1) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:46:in `block (2 levels) in render'
+activesupport (5.2.4.1) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/home/bazt/.rvm/rubies/ruby-2.6.4/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (5.2.4.1) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:46:in `block in render'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+activerecord (5.2.4.1) lib/active_record/railties/controller_runtime.rb:31:in `cleanup_view_runtime'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:45:in `render'
+responders (3.0.0) lib/action_controller/responder.rb:240:in `default_render'
+responders (3.0.0) lib/action_controller/responder.rb:172:in `to_html'
+responders (3.0.0) lib/responders/flash_responder.rb:109:in `to_html'
+responders (3.0.0) lib/action_controller/responder.rb:165:in `respond'
+responders (3.0.0) lib/action_controller/responder.rb:158:in `call'
+responders (3.0.0) lib/action_controller/respond_with.rb:213:in `respond_with'
+inherited_resources (1.11.0) lib/inherited_resources/actions.rb:13:in `show'
+actionpack (5.2.4.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/receptions/4" for ::1 at 2020-03-19 15:31:25 -0300
+Processing by ReceptionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mReception Load (0.5ms)[0m  [1m[34mSELECT  "receptions".* FROM "receptions" WHERE "receptions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 7.8ms)
+
+
+  
+ActionView::MissingTemplate (Missing template receptions/show, inherited_resources/base/show, application/show with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :arb, :coffee, :jbuilder]}. Searched in:
+  * "/home/bazt/Escritorio/project/wms/app/views"
+  * "/home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views"
+  * "/home/bazt/.rvm/gems/ruby-2.6.4/gems/kaminari-core-1.2.0/app/views"
+  * "/home/bazt/.rvm/gems/ruby-2.6.4/gems/devise-4.7.1/app/views"
+):
+  
+actionview (5.2.4.1) lib/action_view/path_set.rb:48:in `find'
+actionview (5.2.4.1) lib/action_view/lookup_context.rb:116:in `find'
+actionview (5.2.4.1) lib/action_view/renderer/abstract_renderer.rb:20:in `find_template'
+actionview (5.2.4.1) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+actionview (5.2.4.1) lib/action_view/renderer/template_renderer.rb:10:in `render'
+actionview (5.2.4.1) lib/action_view/renderer/renderer.rb:44:in `render_template'
+actionview (5.2.4.1) lib/action_view/renderer/renderer.rb:25:in `render'
+actionview (5.2.4.1) lib/action_view/rendering.rb:103:in `_render_template'
+actionpack (5.2.4.1) lib/action_controller/metal/streaming.rb:219:in `_render_template'
+actionview (5.2.4.1) lib/action_view/rendering.rb:84:in `render_to_body'
+actionpack (5.2.4.1) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (5.2.4.1) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (5.2.4.1) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (5.2.4.1) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:46:in `block (2 levels) in render'
+activesupport (5.2.4.1) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/home/bazt/.rvm/rubies/ruby-2.6.4/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (5.2.4.1) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:46:in `block in render'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+activerecord (5.2.4.1) lib/active_record/railties/controller_runtime.rb:31:in `cleanup_view_runtime'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:45:in `render'
+responders (3.0.0) lib/action_controller/responder.rb:240:in `default_render'
+responders (3.0.0) lib/action_controller/responder.rb:172:in `to_html'
+responders (3.0.0) lib/responders/flash_responder.rb:109:in `to_html'
+responders (3.0.0) lib/action_controller/responder.rb:165:in `respond'
+responders (3.0.0) lib/action_controller/responder.rb:158:in `call'
+responders (3.0.0) lib/action_controller/respond_with.rb:213:in `respond_with'
+inherited_resources (1.11.0) lib/inherited_resources/actions.rb:13:in `show'
+actionpack (5.2.4.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/receptions/" for ::1 at 2020-03-19 15:31:28 -0300
+Processing by ReceptionsController#index as HTML
+  Rendering receptions/index.html.erb within layouts/application
+  [1m[36mReception Load (0.7ms)[0m  [1m[34mSELECT "receptions".* FROM "receptions"[0m
+  ↳ app/views/receptions/index.html.erb:18
+  [1m[36mDetailsPurchaseOrder Load (0.9ms)[0m  [1m[34mSELECT  "details_purchase_orders".* FROM "details_purchase_orders" WHERE "details_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/receptions/index.html.erb:20
+  [1m[36mInfoPurchaseOrder Load (0.4ms)[0m  [1m[34mSELECT  "info_purchase_orders".* FROM "info_purchase_orders" WHERE "info_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/receptions/index.html.erb:20
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/receptions/index.html.erb:21
+  Rendered receptions/index.html.erb within layouts/application (94.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:49
+  Rendered shared/_navbar.html.erb (23.9ms)
+  Rendered shared/_footer.html.erb (1.6ms)
+Completed 200 OK in 238ms (Views: 200.4ms | ActiveRecord: 30.5ms)
+
+
+Started GET "/receptions/4/edit" for ::1 at 2020-03-19 15:31:32 -0300
+Processing by ReceptionsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mReception Load (0.7ms)[0m  [1m[34mSELECT  "receptions".* FROM "receptions" WHERE "receptions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/receptions_controller.rb:17
+Redirected to http://localhost:3000/receptions
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/receptions" for ::1 at 2020-03-19 15:31:32 -0300
+Processing by ReceptionsController#index as HTML
+  Rendering receptions/index.html.erb within layouts/application
+  [1m[36mReception Load (0.7ms)[0m  [1m[34mSELECT "receptions".* FROM "receptions"[0m
+  ↳ app/views/receptions/index.html.erb:18
+  [1m[36mDetailsPurchaseOrder Load (1.3ms)[0m  [1m[34mSELECT  "details_purchase_orders".* FROM "details_purchase_orders" WHERE "details_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/receptions/index.html.erb:20
+  [1m[36mInfoPurchaseOrder Load (0.5ms)[0m  [1m[34mSELECT  "info_purchase_orders".* FROM "info_purchase_orders" WHERE "info_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/receptions/index.html.erb:20
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/receptions/index.html.erb:21
+  Rendered receptions/index.html.erb within layouts/application (14.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:49
+  Rendered shared/_navbar.html.erb (6.0ms)
+  Rendered shared/_footer.html.erb (1.4ms)
+Completed 200 OK in 258ms (Views: 253.0ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/receptions/4/edit" for ::1 at 2020-03-19 15:31:35 -0300
+Processing by ReceptionsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mReception Load (0.6ms)[0m  [1m[34mSELECT  "receptions".* FROM "receptions" WHERE "receptions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/receptions_controller.rb:17
+Redirected to http://localhost:3000/receptions
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/receptions" for ::1 at 2020-03-19 15:31:35 -0300
+Processing by ReceptionsController#index as HTML
+  Rendering receptions/index.html.erb within layouts/application
+  [1m[36mReception Load (0.5ms)[0m  [1m[34mSELECT "receptions".* FROM "receptions"[0m
+  ↳ app/views/receptions/index.html.erb:18
+  [1m[36mDetailsPurchaseOrder Load (0.5ms)[0m  [1m[34mSELECT  "details_purchase_orders".* FROM "details_purchase_orders" WHERE "details_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/receptions/index.html.erb:20
+  [1m[36mInfoPurchaseOrder Load (0.5ms)[0m  [1m[34mSELECT  "info_purchase_orders".* FROM "info_purchase_orders" WHERE "info_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/receptions/index.html.erb:20
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/receptions/index.html.erb:21
+  Rendered receptions/index.html.erb within layouts/application (11.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:49
+  Rendered shared/_navbar.html.erb (5.6ms)
+  Rendered shared/_footer.html.erb (1.3ms)
+Completed 200 OK in 125ms (Views: 120.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/receptions/4/edit" for ::1 at 2020-03-19 15:35:33 -0300
+Processing by ReceptionsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mReception Load (0.2ms)[0m  [1m[34mSELECT  "receptions".* FROM "receptions" WHERE "receptions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering receptions/edit.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "info_purchase_orders"."id" FROM "info_purchase_orders"[0m
+  ↳ app/views/receptions/_form.html.erb:16
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "name", "details_purchase_orders"."id" FROM "details_purchase_orders" LEFT OUTER JOIN "products" ON "products"."id" = "details_purchase_orders"."product_id"[0m
+  ↳ app/views/receptions/_form.html.erb:21
+  Rendered receptions/_form.html.erb (50.9ms)
+  Rendered receptions/edit.html.erb within layouts/application (53.4ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:49
+  Rendered shared/_navbar.html.erb (25.0ms)
+  Rendered shared/_footer.html.erb (2.1ms)
+Completed 200 OK in 219ms (Views: 177.5ms | ActiveRecord: 26.8ms)
+
+
+Started GET "/search_details?id=4&_=1584642688864" for ::1 at 2020-03-19 15:35:36 -0300
+Processing by SearchDetailsController#index as JS
+  Parameters: {"id"=>"4", "_"=>"1584642688864"}
+  Rendering search_details/index.js.erb
+  [1m[36mDetailsPurchaseOrder Load (0.9ms)[0m  [1m[34mSELECT "details_purchase_orders".* FROM "details_purchase_orders" WHERE "details_purchase_orders"."info_purchase_order_id" = $1[0m  [["info_purchase_order_id", 4]]
+  ↳ app/views/search_details/index.js.erb:2
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/search_details/index.js.erb:3
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/search_details/index.js.erb:3
+  Rendered search_details/index.js.erb (46.5ms)
+Completed 200 OK in 63ms (Views: 48.4ms | ActiveRecord: 8.1ms)
+
+
+Started PATCH "/receptions/4" for ::1 at 2020-03-19 15:35:38 -0300
+Processing by ReceptionsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LujY6f6NRTfbiafemtgweQU0aSVAk/VJPWXWMOgElytQPc78EXvnbI24gSvZo0ICtdHJpo8CnwlhLlLwX9lZ7Q==", "reception"=>{"info_purchase_orders_id"=>"4", "details_purchase_orders_id"=>"5", "quantity_ok"=>"5"}, "commit"=>"Update Reception", "id"=>"4"}
+  [1m[36mReception Load (0.6ms)[0m  [1m[34mSELECT  "receptions".* FROM "receptions" WHERE "receptions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :info_purchase_orders_id
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mDetailsPurchaseOrder Load (0.6ms)[0m  [1m[34mSELECT  "details_purchase_orders".* FROM "details_purchase_orders" WHERE "details_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/receptions/4
+Completed 302 Found in 24ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/receptions/4" for ::1 at 2020-03-19 15:35:38 -0300
+Processing by ReceptionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mReception Load (0.5ms)[0m  [1m[34mSELECT  "receptions".* FROM "receptions" WHERE "receptions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering receptions/show.html.erb within layouts/application
+  Rendered receptions/show.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <p id="notice"><%= notice %></p>
+    2: 
+    3: <tbody>
+    4:     <% @receptions.each do |reception| %>
+    5:       <tr>
+    6:         <td><%= reception.details_purchase_order.info_purchase_order.id  %></td>
+    7:         <td><%= reception.details_purchase_order.product.name  %></td>
+  
+app/views/receptions/show.html.erb:4:in `_app_views_receptions_show_html_erb___4369446749932957224_70267361408140'
+Started GET "/receptions/4" for ::1 at 2020-03-19 15:36:12 -0300
+Processing by ReceptionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  Rendering receptions/show.html.erb within layouts/application
+  [1m[36mReception Load (0.7ms)[0m  [1m[34mSELECT "receptions".* FROM "receptions"[0m
+  ↳ app/views/receptions/show.html.erb:4
+  [1m[36mDetailsPurchaseOrder Load (0.3ms)[0m  [1m[34mSELECT  "details_purchase_orders".* FROM "details_purchase_orders" WHERE "details_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:6
+  [1m[36mInfoPurchaseOrder Load (0.5ms)[0m  [1m[34mSELECT  "info_purchase_orders".* FROM "info_purchase_orders" WHERE "info_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:6
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:7
+  Rendered receptions/show.html.erb within layouts/application (110.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:49
+  Rendered shared/_navbar.html.erb (23.6ms)
+  Rendered shared/_footer.html.erb (1.4ms)
+Completed 200 OK in 255ms (Views: 213.8ms | ActiveRecord: 34.1ms)
+
+
+Started GET "/receptions/4" for ::1 at 2020-03-19 15:37:15 -0300
+Processing by ReceptionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  Rendering receptions/show.html.erb within layouts/application
+  [1m[36mReception Load (1.8ms)[0m  [1m[34mSELECT "receptions".* FROM "receptions"[0m
+  ↳ app/views/receptions/show.html.erb:4
+  [1m[36mDetailsPurchaseOrder Load (0.5ms)[0m  [1m[34mSELECT  "details_purchase_orders".* FROM "details_purchase_orders" WHERE "details_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:6
+  [1m[36mInfoPurchaseOrder Load (0.5ms)[0m  [1m[34mSELECT  "info_purchase_orders".* FROM "info_purchase_orders" WHERE "info_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:6
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:7
+  Rendered receptions/show.html.erb within layouts/application (17.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:49
+  Rendered shared/_navbar.html.erb (6.0ms)
+  Rendered shared/_footer.html.erb (1.5ms)
+Completed 200 OK in 153ms (Views: 147.2ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/receptions/4" for ::1 at 2020-03-19 15:38:47 -0300
+Processing by ReceptionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  Rendering receptions/show.html.erb within layouts/application
+  [1m[36mReception Load (0.7ms)[0m  [1m[34mSELECT "receptions".* FROM "receptions"[0m
+  ↳ app/views/receptions/show.html.erb:10
+  [1m[36mDetailsPurchaseOrder Load (0.4ms)[0m  [1m[34mSELECT  "details_purchase_orders".* FROM "details_purchase_orders" WHERE "details_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:12
+  [1m[36mInfoPurchaseOrder Load (0.5ms)[0m  [1m[34mSELECT  "info_purchase_orders".* FROM "info_purchase_orders" WHERE "info_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:12
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:13
+  Rendered receptions/show.html.erb within layouts/application (14.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:49
+  Rendered shared/_navbar.html.erb (7.7ms)
+  Rendered shared/_footer.html.erb (1.3ms)
+Completed 200 OK in 250ms (Views: 244.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/receptions/4" for ::1 at 2020-03-19 15:40:47 -0300
+Processing by ReceptionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  Rendering receptions/show.html.erb within layouts/application
+  [1m[36mReception Load (0.6ms)[0m  [1m[34mSELECT "receptions".* FROM "receptions"[0m
+  ↳ app/views/receptions/show.html.erb:4
+  [1m[36mDetailsPurchaseOrder Load (0.4ms)[0m  [1m[34mSELECT  "details_purchase_orders".* FROM "details_purchase_orders" WHERE "details_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:7
+  [1m[36mInfoPurchaseOrder Load (0.6ms)[0m  [1m[34mSELECT  "info_purchase_orders".* FROM "info_purchase_orders" WHERE "info_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:7
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:9
+  Rendered receptions/show.html.erb within layouts/application (14.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:49
+  Rendered shared/_navbar.html.erb (6.8ms)
+  Rendered shared/_footer.html.erb (1.3ms)
+Completed 200 OK in 157ms (Views: 152.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/receptions/4" for ::1 at 2020-03-19 15:41:19 -0300
+Processing by ReceptionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  Rendering receptions/show.html.erb within layouts/application
+  [1m[36mReception Load (0.7ms)[0m  [1m[34mSELECT "receptions".* FROM "receptions"[0m
+  ↳ app/views/receptions/show.html.erb:4
+  [1m[36mDetailsPurchaseOrder Load (0.7ms)[0m  [1m[34mSELECT  "details_purchase_orders".* FROM "details_purchase_orders" WHERE "details_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:7
+  [1m[36mInfoPurchaseOrder Load (0.3ms)[0m  [1m[34mSELECT  "info_purchase_orders".* FROM "info_purchase_orders" WHERE "info_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:7
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:9
+  Rendered receptions/show.html.erb within layouts/application (14.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:49
+  Rendered shared/_navbar.html.erb (8.8ms)
+  Rendered shared/_footer.html.erb (1.2ms)
+Completed 200 OK in 156ms (Views: 150.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/receptions/4" for ::1 at 2020-03-19 15:43:22 -0300
+Processing by ReceptionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  Rendering receptions/show.html.erb within layouts/application
+  [1m[36mReception Load (0.6ms)[0m  [1m[34mSELECT "receptions".* FROM "receptions"[0m
+  ↳ app/views/receptions/show.html.erb:4
+  [1m[36mDetailsPurchaseOrder Load (0.6ms)[0m  [1m[34mSELECT  "details_purchase_orders".* FROM "details_purchase_orders" WHERE "details_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:7
+  [1m[36mInfoPurchaseOrder Load (0.4ms)[0m  [1m[34mSELECT  "info_purchase_orders".* FROM "info_purchase_orders" WHERE "info_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:7
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:9
+  Rendered receptions/show.html.erb within layouts/application (13.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:49
+  Rendered shared/_navbar.html.erb (5.2ms)
+  Rendered shared/_footer.html.erb (1.3ms)
+Completed 200 OK in 153ms (Views: 148.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/receptions/4" for ::1 at 2020-03-19 15:45:20 -0300
+Processing by ReceptionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  Rendering receptions/show.html.erb within layouts/application
+  [1m[36mReception Load (0.8ms)[0m  [1m[34mSELECT "receptions".* FROM "receptions"[0m
+  ↳ app/views/receptions/show.html.erb:4
+  [1m[36mDetailsPurchaseOrder Load (1.2ms)[0m  [1m[34mSELECT  "details_purchase_orders".* FROM "details_purchase_orders" WHERE "details_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:7
+  [1m[36mInfoPurchaseOrder Load (1.0ms)[0m  [1m[34mSELECT  "info_purchase_orders".* FROM "info_purchase_orders" WHERE "info_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:7
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:9
+  Rendered receptions/show.html.erb within layouts/application (19.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:49
+  Rendered shared/_navbar.html.erb (5.3ms)
+  Rendered shared/_footer.html.erb (1.2ms)
+Completed 200 OK in 153ms (Views: 146.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/receptions/4" for ::1 at 2020-03-19 15:46:49 -0300
+Processing by ReceptionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  Rendering receptions/show.html.erb within layouts/application
+  [1m[36mReception Load (0.6ms)[0m  [1m[34mSELECT "receptions".* FROM "receptions"[0m
+  ↳ app/views/receptions/show.html.erb:4
+  [1m[36mDetailsPurchaseOrder Load (0.4ms)[0m  [1m[34mSELECT  "details_purchase_orders".* FROM "details_purchase_orders" WHERE "details_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:8
+  [1m[36mInfoPurchaseOrder Load (0.4ms)[0m  [1m[34mSELECT  "info_purchase_orders".* FROM "info_purchase_orders" WHERE "info_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:8
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:11
+  Rendered receptions/show.html.erb within layouts/application (15.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:49
+  Rendered shared/_navbar.html.erb (6.2ms)
+  Rendered shared/_footer.html.erb (1.2ms)
+Completed 200 OK in 237ms (Views: 232.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/receptions/4" for ::1 at 2020-03-19 15:48:05 -0300
+Processing by ReceptionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  Rendering receptions/show.html.erb within layouts/application
+  [1m[36mReception Load (1.1ms)[0m  [1m[34mSELECT "receptions".* FROM "receptions"[0m
+  ↳ app/views/receptions/show.html.erb:4
+  [1m[36mDetailsPurchaseOrder Load (0.4ms)[0m  [1m[34mSELECT  "details_purchase_orders".* FROM "details_purchase_orders" WHERE "details_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:8
+  [1m[36mInfoPurchaseOrder Load (0.4ms)[0m  [1m[34mSELECT  "info_purchase_orders".* FROM "info_purchase_orders" WHERE "info_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:8
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/receptions/show.html.erb:13
+  Rendered receptions/show.html.erb within layouts/application (14.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:49
+  Rendered shared/_navbar.html.erb (6.1ms)
+  Rendered shared/_footer.html.erb (1.9ms)
+Completed 200 OK in 159ms (Views: 154.0ms | ActiveRecord: 2.6ms)
+
+

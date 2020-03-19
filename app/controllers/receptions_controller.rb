@@ -5,6 +5,11 @@ class ReceptionsController < InheritedResources::Base
     @details_purchase_orders = DetailsPurchaseOrder.all
   end
 
+  def show
+    @receptions = Reception.all
+    @details_purchase_orders = DetailsPurchaseOrder.all
+  end
+
   private
 
     def reception_params
