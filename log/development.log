@@ -48288,3 +48288,98 @@ LINE 1: SELECT "receptions".* FROM "receptions" WHERE (name LIKE '%d...
     27:         <td><%= reception.details_purchase_order.product.name  %></td>
   
 app/views/receptions/index.html.erb:24:in `_app_views_receptions_index_html_erb__221961190737542076_70267343268680'
+Started GET "/receptions" for ::1 at 2020-03-19 14:31:09 -0300
+Processing by ReceptionsController#index as HTML
+  Rendering receptions/index.html.erb within layouts/application
+  [1m[36mReception Load (1.2ms)[0m  [1m[34mSELECT "receptions".* FROM "receptions"[0m
+  ↳ app/views/receptions/index.html.erb:18
+  [1m[36mDetailsPurchaseOrder Load (0.5ms)[0m  [1m[34mSELECT  "details_purchase_orders".* FROM "details_purchase_orders" WHERE "details_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/receptions/index.html.erb:20
+  [1m[36mInfoPurchaseOrder Load (0.5ms)[0m  [1m[34mSELECT  "info_purchase_orders".* FROM "info_purchase_orders" WHERE "info_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/receptions/index.html.erb:20
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/receptions/index.html.erb:21
+  Rendered receptions/index.html.erb within layouts/application (15.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:49
+  Rendered shared/_navbar.html.erb (6.5ms)
+  Rendered shared/_footer.html.erb (1.5ms)
+Completed 200 OK in 128ms (Views: 122.0ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/receptions" for ::1 at 2020-03-19 14:40:07 -0300
+Processing by ReceptionsController#index as HTML
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/bazt/Escritorio/project/wms/app/controllers/receptions_controller.rb:4)
+  Rendering receptions/index.html.erb within layouts/application
+  Rendered receptions/index.html.erb within layouts/application (14.6ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 6.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Ransack::Search:0x00007fd0b003a330>):
+    15:   </thead>
+    16: 
+    17:   <tbody>
+    18:     <% @receptions.each do |reception| %>
+    19:       <tr>
+    20:         <td><%= reception.details_purchase_order.info_purchase_order.id  %></td>
+    21:         <td><%= reception.details_purchase_order.product.name  %></td>
+  
+app/views/receptions/index.html.erb:18:in `_app_views_receptions_index_html_erb__221961190737542076_70267349741520'
+Started GET "/receptions" for ::1 at 2020-03-19 14:40:27 -0300
+Processing by ReceptionsController#index as HTML
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/bazt/Escritorio/project/wms/app/controllers/receptions_controller.rb:4)
+  Rendering receptions/index.html.erb within layouts/application
+  Rendered receptions/index.html.erb within layouts/application (9.3ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 3.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Ransack::Search:0x00007fd0dca378c0>):
+    15:   </thead>
+    16: 
+    17:   <tbody>
+    18:     <% @receptions.each do |reception| %>
+    19:       <tr>
+    20:         <td><%= reception.details_purchase_order.info_purchase_order.id  %></td>
+    21:         <td><%= reception.details_purchase_order.product.name  %></td>
+  
+app/views/receptions/index.html.erb:18:in `_app_views_receptions_index_html_erb__221961190737542076_70267516112700'
+Started GET "/receptions" for ::1 at 2020-03-19 14:40:50 -0300
+Processing by ReceptionsController#index as HTML
+  Rendering receptions/index.html.erb within layouts/application
+  [1m[36mReception Load (0.8ms)[0m  [1m[34mSELECT "receptions".* FROM "receptions"[0m
+  ↳ app/views/receptions/index.html.erb:18
+  [1m[36mDetailsPurchaseOrder Load (0.6ms)[0m  [1m[34mSELECT  "details_purchase_orders".* FROM "details_purchase_orders" WHERE "details_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/receptions/index.html.erb:20
+  [1m[36mInfoPurchaseOrder Load (0.6ms)[0m  [1m[34mSELECT  "info_purchase_orders".* FROM "info_purchase_orders" WHERE "info_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/receptions/index.html.erb:20
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/receptions/index.html.erb:21
+  Rendered receptions/index.html.erb within layouts/application (110.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:49
+  Rendered shared/_navbar.html.erb (23.5ms)
+  Rendered shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 250ms (Views: 206.7ms | ActiveRecord: 35.4ms)
+
+
+Started GET "/receptions" for ::1 at 2020-03-19 14:41:07 -0300
+Processing by ReceptionsController#index as HTML
+  Rendering receptions/index.html.erb within layouts/application
+  [1m[36mReception Load (0.6ms)[0m  [1m[34mSELECT "receptions".* FROM "receptions"[0m
+  ↳ app/views/receptions/index.html.erb:18
+  [1m[36mDetailsPurchaseOrder Load (0.5ms)[0m  [1m[34mSELECT  "details_purchase_orders".* FROM "details_purchase_orders" WHERE "details_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/receptions/index.html.erb:20
+  [1m[36mInfoPurchaseOrder Load (0.5ms)[0m  [1m[34mSELECT  "info_purchase_orders".* FROM "info_purchase_orders" WHERE "info_purchase_orders"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/receptions/index.html.erb:20
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/receptions/index.html.erb:21
+  Rendered receptions/index.html.erb within layouts/application (106.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:49
+  Rendered shared/_navbar.html.erb (27.2ms)
+  Rendered shared/_footer.html.erb (1.2ms)
+Completed 200 OK in 263ms (Views: 224.7ms | ActiveRecord: 31.6ms)
+
+

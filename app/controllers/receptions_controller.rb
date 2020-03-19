@@ -1,7 +1,7 @@
 class ReceptionsController < InheritedResources::Base
 
   def index
-    @receptions = Reception.search(params[:search])
+    @receptions = Reception.all
     @details_purchase_orders = DetailsPurchaseOrder.all
   end
 
