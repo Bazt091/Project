@@ -5,7 +5,7 @@ class InfoDispatchOrdersController < ApplicationController
   # GET /info_dispatch_orders
   # GET /info_dispatch_orders.json
   def index
-    @info_dispatch_orders = InfoDispatchOrder.search(params[:search])
+    @info_dispatch_orders = InfoDispatchOrder.all
   end
 
   # GET /info_dispatch_orders/1

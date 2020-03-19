@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+    <p>
+        <strong>Numero de Orden</li></strong>
+        <%= @dispatch.details_dispatch_order.info_dispatch_order.id %>
+    </p>
+    
+    <p>
+    <strong>Nombre de Producto</li></strong>
+        <%= @dispatch.details_dispatch_order.product.name %>
+        </p>
+
+    <p>
+        <strong>Cantidad Solicitada</strong>
+        <%= @dispatch.original_quantity %>
+    </p>
+
+    <p>
+        <strong>Cantidad Ingresada</strong>
+        <%= @dispatch.quantity_ok %>
+    </p>
+
+    <p>
+        <strong>Cantidad Pendiente</strong>
+        <%= @dispatch.pending_quantity %>
+    </p>
+
+        <%= link_to 'Edit', edit_dispatch_path(@dispatch) %>
+        <%= link_to 'Back', dispatches_path %>
+        <%= link_to 'Destroy', @dispatch, method: :delete, data: { confirm: 'Are you sure?' } %>

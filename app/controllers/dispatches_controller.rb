@@ -4,6 +4,11 @@ class DispatchesController < InheritedResources::Base
     @dispatches = Dispatch.all
     @details_dispatch_orders = DetailsDispatchOrder.all
   end
+
+  def show
+    @dispatch = Dispatch.find(params[:id])
+    @details_dispatch_orders = DetailsDispatchOrder.all
+  end
   
   private
 

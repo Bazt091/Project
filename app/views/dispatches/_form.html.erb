@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :details_dispatch_orders_id %>
+    <%= form.label :Nº_Orden_de_Despacho %>
     <%= form.select :info_dispatch_orders_id, InfoDispatchOrder.all.pluck(:id), {prompt: "Seleccione Orden"}, id: "dispatch_order" %>
   </div>
 
 <div class="field">
-    <%= form.label :details_dispatch_orders %>
-    <%= form.select :details_dispatch_orders, DetailsDispatchOrder.includes(:product).all.pluck(:name, :id), {}, id: "product_details" %>
+    <%= form.label :Detalle_Orden_de_Despacho %>
+    <%= form.select :details_dispatch_orders_id, DetailsDispatchOrder.includes(:product).all.pluck(:name, :id), {}, id: "product_details" %>
 </div>
 
   <div class="field">

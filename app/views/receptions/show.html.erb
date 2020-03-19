@@ -1,26 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<tbody>
-    <% @receptions.each do |reception| %>
-      <tr>
     <p>
         <strong>Numero de Orden</li></strong>
-        <%= reception.details_purchase_order.info_purchase_order.id  %>
+        <%= @reception.details_purchase_order.info_purchase_order.id %>
     </p>
     
     <p>
     <strong>Nombre de Producto</li></strong>
-        <%= reception.details_purchase_order.product.name  %>
+        <%= @reception.details_purchase_order.product.name %>
         </p>
-        
-    <p><strong>Cantidad Solicitada</strong>
-        <%= reception.original_quantity %></p>
-    <p><strong>Cantidad Ingresada</strong>
-        <%= reception.quantity_ok %></p>
-    <p><strong>Cantidad Pendiente</strong>
-        <%= reception.pending_quantity %></p>
-        <%= link_to 'Edit', edit_reception_path(reception) %>
-        <%= link_to 'Destroy', reception, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </tr>
-    <% end %>
-  </tbody>
+
+    <p>
+        <strong>Cantidad Solicitada</strong>
+        <%= @reception.original_quantity %>
+    </p>
+
+    <p>
+        <strong>Cantidad Ingresada</strong>
+        <%= @reception.quantity_ok %>
+    </p>
+
+    <p>
+        <strong>Cantidad Pendiente</strong>
+        <%= @reception.pending_quantity %>
+    </p>
+
+        <%= link_to 'Edit', edit_dispatch_path(@reception) %>
+        <%= link_to 'Back', receptions_path %>
+        <%= link_to 'Destroy', @reception, method: :delete, data: { confirm: 'Are you sure?' } %>

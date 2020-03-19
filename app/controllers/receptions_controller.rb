@@ -6,7 +6,7 @@ class ReceptionsController < InheritedResources::Base
   end
 
   def show
-    @receptions = Reception.all
+    @reception = Reception.find(params[:id])
     @details_purchase_orders = DetailsPurchaseOrder.all
   end
 

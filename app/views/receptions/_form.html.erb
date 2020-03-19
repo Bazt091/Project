@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :details_purchase_orders_id %>
+    <%= form.label :Nº_Orden_de_Compra %>
     <%= form.select :info_purchase_orders_id, InfoPurchaseOrder.all.pluck(:id), {prompt: "Seleccione Orden"}, id: "purchase_order" %>
   </div>
 
   <div class="field">
-    <%= form.label :details_purchase_orders %>
+    <%= form.label :Detalle_Orden_de_Compra%>
     <%= form.select :details_purchase_orders_id, DetailsPurchaseOrder.includes(:product).all.pluck(:name, :id), {}, id: "product_detail" %>
 </div>
 

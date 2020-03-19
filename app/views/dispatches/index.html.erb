@@ -22,6 +22,7 @@
         <td><%= dispatch.original_quantity %></td>
         <td><%= dispatch.quantity_ok %></td>
         <td><%= dispatch.pending_quantity %></td>
+        <td><%= link_to 'Show', dispatch %></td>
         <td><%= link_to 'Edit', edit_dispatch_path(dispatch) %></td>
         <td><%= link_to 'Destroy', dispatch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

@@ -3,8 +3,10 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-6">
+
+  <div class="col-6">
       <% if @product.image.attached? %>
+
         <p>
           <strong>Imagen:</strong><br>
             <%= image_tag @product.image %>
@@ -14,8 +16,9 @@
               <h2> SIN IMAGEN DISPONIBLE </h2>
       <%end%>
     </div>
-    
-    <div class="col-6">
+
+    <div class="col-6 mt-5">
+
       <p>
         <strong>Sku:</strong>
         <%= @product.sku %>
@@ -50,7 +53,7 @@
         <strong>Activo:</strong>
         <%= @product.active %>
       </p>
-      </div>
+    </div>
     </div>
 </div>
 
