@@ -1,0 +1,2 @@
+module SearchOdHelper
+end

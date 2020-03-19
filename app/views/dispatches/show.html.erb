@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Details dispatch orders:</strong>
+  <%= @dispatch.details_dispatch_orders %>
+</p>
+
+<p>
+  <strong>Quantity ok:</strong>
+  <%= @dispatch.quantity_ok %>
+</p>
+
+<%= link_to 'Edit', edit_dispatch_path(@dispatch) %> |
+<%= link_to 'Back', dispatches_path %>

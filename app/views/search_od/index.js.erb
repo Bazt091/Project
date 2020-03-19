@@ -1,0 +1,4 @@
+$("#product_details").html(' ');
+<% @dispatch_order_details.each do |i| %>
+$("#product_details").append('<option value="'+ <%= i.id %> +'">'+ "<%= i.product.name %>" + " (<%= i.product_quantity %>)" +'</option>')
+<% end %> 

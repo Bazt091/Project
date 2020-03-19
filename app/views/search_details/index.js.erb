@@ -1,0 +1,4 @@
+$("#product_detail").html(' ');
+<% @purchase_order_details.each do |i| %>
+$("#product_detail").append('<option value="'+ <%= i.id %> +'">'+ "<%= i.product.name %>" + " (<%= i.product_quantity %>)" +'</option>')
+<% end %> 

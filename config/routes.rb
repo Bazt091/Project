@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :dispatches
+  get 'search_details', to: 'search_details#index'
+  get 'search_od', to: 'search_od#index'
+  resources :receptions
   resources :events
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

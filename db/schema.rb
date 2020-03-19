@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_18_123537) do
+ActiveRecord::Schema.define(version: 2020_03_19_001141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,6 +103,14 @@ ActiveRecord::Schema.define(version: 2020_03_18_123537) do
     t.index ["product_id"], name: "index_details_purchase_orders_on_product_id"
   end
 
+  create_table "dispatches", force: :cascade do |t|
+    t.bigint "details_dispatch_orders_id"
+    t.integer "quantity_ok"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["details_dispatch_orders_id"], name: "index_dispatches_on_details_dispatch_orders_id"
+  end
+
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.datetime "start"
@@ -186,6 +194,14 @@ ActiveRecord::Schema.define(version: 2020_03_18_123537) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "receptions", force: :cascade do |t|
+    t.bigint "details_purchase_orders_id"
+    t.integer "quantity_ok"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["details_purchase_orders_id"], name: "index_receptions_on_details_purchase_orders_id"
+  end
+
   create_table "stock_by_locations", force: :cascade do |t|
     t.bigint "location_id"
     t.bigint "product_id"
@@ -213,11 +229,13 @@ ActiveRecord::Schema.define(version: 2020_03_18_123537) do
   add_foreign_key "details_dispatch_orders", "products"
   add_foreign_key "details_purchase_orders", "info_purchase_orders"
   add_foreign_key "details_purchase_orders", "products"
+  add_foreign_key "dispatches", "details_dispatch_orders", column: "details_dispatch_orders_id"
   add_foreign_key "info_dispatch_orders", "clients"
   add_foreign_key "info_dispatch_orders", "users"
   add_foreign_key "info_purchase_orders", "providers"
   add_foreign_key "info_purchase_orders", "users"
   add_foreign_key "products", "providers"
+  add_foreign_key "receptions", "details_purchase_orders", column: "details_purchase_orders_id"
   add_foreign_key "stock_by_locations", "locations"
   add_foreign_key "stock_by_locations", "products"
 end
