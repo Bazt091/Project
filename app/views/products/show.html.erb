@@ -4,20 +4,20 @@
 <div class="container">
   <div class="row">
 
-  <div class="col-6">
-      <% if @product.image.attached? %>
-
-        <p>
-          <strong>Imagen:</strong><br>
-            <%= image_tag @product.image %>
-        </p>
+    <div class="col">
+        <% if @product.image.attached? %>
+          <p>
+            <strong>Imagen:</strong><br>
+              <%= image_tag @product.image %>
+          </p>
         <% else %>
-          <strong>Imagen:</strong><br>
+            <strong>Imagen:</strong><br>
               <h2> SIN IMAGEN DISPONIBLE </h2>
       <%end%>
     </div>
 
-    <div class="col-6 mt-5">
+
+    <div class="col">
 
       <p>
         <strong>Sku:</strong>
@@ -55,8 +55,9 @@
       </p>
     </div>
     </div>
-</div>
+
 
 
 <%= link_to 'Edit', edit_product_path(@product) %> <br>
 <%= link_to 'Back', products_path %>
+</div>
