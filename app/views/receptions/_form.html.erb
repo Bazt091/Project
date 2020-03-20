@@ -11,18 +11,19 @@
     </div>
   <% end %>
 
+<div class='container'>
   <div class="field">
-    <%= form.label :Nº_Orden_de_Compra %>
+    <%= form.label :Nº_Orden_de_Compra %><br>
     <%= form.select :info_purchase_orders_id, InfoPurchaseOrder.all.pluck(:id), {prompt: "Seleccione Orden"}, id: "purchase_order" %>
   </div>
 
   <div class="field">
-    <%= form.label :Detalle_Orden_de_Compra%>
+    <%= form.label :Detalle_Orden_de_Compra%><br>
     <%= form.select :details_purchase_orders_id, DetailsPurchaseOrder.includes(:product).all.pluck(:name, :id), {}, id: "product_detail" %>
 </div>
 
   <div class="field">
-    <%= form.label :quantity_ok %>
+    <%= form.label :quantity_ok %><br>
     <%= form.number_field :quantity_ok %>
   </div>
 
@@ -30,3 +31,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div>

@@ -52841,3 +52841,891 @@ Completed 200 OK in 104ms (Views: 101.2ms | ActiveRecord: 0.0ms)
   ↳ bin/rails:9
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+Started GET "/admin/login" for ::1 at 2020-03-20 09:07:27 -0300
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/devise/shared/_links.erb (2.0ms)
+  Rendered /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (138.1ms)
+Completed 200 OK in 966ms (Views: 937.2ms | ActiveRecord: 10.7ms)
+
+
+Started POST "/admin/login" for ::1 at 2020-03-20 09:07:43 -0300
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lSzO9xJAnvFm/uVgI/lyVHwu5n5lEbwFjvKwaLvhRUtJV2EX5ym4Yq2FHo+nGnysCtYYdKnPR5TDanRt72ReCg==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (369.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 656ms (ActiveRecord: 369.6ms)
+
+
+Started GET "/admin" for ::1 at 2020-03-20 09:07:44 -0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/page/index.html.arb
+  Rendered /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/page/index.html.arb (194.5ms)
+Completed 200 OK in 258ms (Views: 200.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/users" for ::1 at 2020-03-20 09:07:47 -0300
+Processing by Admin::UsersController#index as HTML
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (113.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT DISTINCT "users"."email" FROM "users" ORDER BY email asc[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/resource/index.html.arb (524.7ms)
+Completed 200 OK in 555ms (Views: 414.9ms | ActiveRecord: 128.8ms)
+
+
+Started GET "/admin/comments" for ::1 at 2020-03-20 09:08:06 -0300
+Processing by Admin::CommentsController#index as HTML
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (122.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1[0m  [["namespace", "admin"]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["namespace", "admin"], ["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments" ORDER BY resource_type asc[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments" ORDER BY author_type asc[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/resource/index.html.arb (452.5ms)
+Completed 200 OK in 478ms (Views: 332.2ms | ActiveRecord: 132.6ms)
+
+
+Started GET "/admin/users" for ::1 at 2020-03-20 09:08:08 -0300
+Processing by Admin::UsersController#index as HTML
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT DISTINCT "users"."email" FROM "users" ORDER BY email asc[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/resource/index.html.arb (185.0ms)
+Completed 200 OK in 196ms (Views: 184.9ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/admin/users/2/edit" for ::1 at 2020-03-20 09:08:14 -0300
+Processing by Admin::UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/resource/edit.html.arb (185.5ms)
+Completed 200 OK in 325ms (Views: 316.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin/users" for ::1 at 2020-03-20 09:08:18 -0300
+Processing by Admin::UsersController#index as HTML
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT DISTINCT "users"."email" FROM "users" ORDER BY email asc[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/resource/index.html.arb (252.4ms)
+Completed 200 OK in 264ms (Views: 253.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/admin/dashboard" for ::1 at 2020-03-20 09:08:31 -0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/page/index.html.arb
+  Rendered /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/page/index.html.arb (145.3ms)
+Completed 200 OK in 153ms (Views: 147.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/admin_users" for ::1 at 2020-03-20 09:08:33 -0300
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "admin_users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "admin_users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "admin_users"[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "admin_users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" ORDER BY "admin_users"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/resource/index.html.arb (193.3ms)
+Completed 200 OK in 206ms (Views: 196.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/admin/comments" for ::1 at 2020-03-20 09:08:35 -0300
+Processing by Admin::CommentsController#index as HTML
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1[0m  [["namespace", "admin"]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["namespace", "admin"], ["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments" ORDER BY resource_type asc[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments" ORDER BY author_type asc[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/resource/index.html.arb (183.6ms)
+Completed 200 OK in 195ms (Views: 184.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/admin/admin_users" for ::1 at 2020-03-20 09:08:36 -0300
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "admin_users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "admin_users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "admin_users"[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "admin_users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" ORDER BY "admin_users"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/resource/index.html.arb (254.3ms)
+Completed 200 OK in 265ms (Views: 255.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/admin/users" for ::1 at 2020-03-20 09:08:43 -0300
+Processing by Admin::UsersController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT DISTINCT "users"."email" FROM "users" ORDER BY email asc[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/resource/index.html.arb (193.6ms)
+Completed 200 OK in 204ms (Views: 194.4ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/admin/users/new" for ::1 at 2020-03-20 09:08:53 -0300
+Processing by Admin::UsersController#new as HTML
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/resource/new.html.arb
+  Rendered /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/resource/new.html.arb (161.8ms)
+Completed 200 OK in 183ms (Views: 175.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/admin/users" for ::1 at 2020-03-20 09:09:07 -0300
+Processing by Admin::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PIX7KPVlzwZpMcMne9cy6XUSCkdDROOD9orNMUwTTpzwWsC5Sq6iyVOj8ioHhgF1oE4i6I4wWnCP8lieX5UDaQ==", "user"=>{"email"=>"nuevo@empresa.cl", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nuevo@empresa.cl"], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (15.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "nuevo@empresa.cl"], ["encrypted_password", "$2a$11$OpA3XQt3vOr94ieD6Dqn6eTdE1xttvvAbS0n7Pgzh3KfKBu/3EPJu"], ["created_at", "2020-03-20 12:09:07.784888"], ["updated_at", "2020-03-20 12:09:07.784888"]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (20.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admin/users/3
+Completed 302 Found in 315ms (ActiveRecord: 38.0ms)
+
+
+Started GET "/admin/users/3" for ::1 at 2020-03-20 09:09:07 -0300
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/resource/show.html.arb
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3[0m  [["resource_type", "User"], ["resource_id", 3], ["namespace", "admin"]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveAdmin::Comment Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3 LIMIT $4 OFFSET $5[0m  [["resource_type", "User"], ["resource_id", 3], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/resource/show.html.arb (331.9ms)
+Completed 200 OK in 343ms (Views: 333.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/admin/users" for ::1 at 2020-03-20 09:09:17 -0300
+Processing by Admin::UsersController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT DISTINCT "users"."email" FROM "users" ORDER BY email asc[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/bazt/.rvm/gems/ruby-2.6.4/gems/activeadmin-2.6.1/app/views/active_admin/resource/index.html.arb (193.7ms)
+Completed 200 OK in 205ms (Views: 194.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/products" for ::1 at 2020-03-20 09:17:59 -0300
+Processing by ProductsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-03-20 09:17:59 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.3ms)
+  Rendered shared/_navbar.html.erb (2.2ms)
+  Rendered shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 97ms (Views: 95.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-03-20 09:18:07 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JbvE089MtouGRND3OAy75Ig1HI1VH6ADfkaXCZko5wjpZP9CcIfbRLzW4fpEXYh4XWk0IphrGfAHPgKmiq6q/Q==", "user"=>{"email"=>"balvarado@empresa.cl", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "balvarado@empresa.cl"], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/products
+Completed 302 Found in 203ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/products" for ::1 at 2020-03-20 09:18:07 -0300
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/bazt/.rvm/rubies/ruby-2.6.4/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/bazt/.rvm/rubies/ruby-2.6.4/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/bazt/.rvm/rubies/ruby-2.6.4/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/bazt/.rvm/rubies/ruby-2.6.4/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered products/index.html.erb within layouts/application (383.3ms)
+Completed 500 Internal Server Error in 402ms (ActiveRecord: 9.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `items_path' for #<#<Class:0x00007fd5dac36150>:0x00007fd5dac345d0>
+Did you mean?  clients_path):
+    11: 
+    12:     <%=
+    13:       link_to 'Download as Excel',
+    14:       items_path(format: :xlsx)
+    15:     %>
+    16: 
+    17: <br>
+  
+app/views/products/index.html.erb:14:in `_app_views_products_index_html_erb___1012453265380159776_70278237500600'
+Started GET "/products" for ::1 at 2020-03-20 09:18:27 -0300
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:35
+  [1m[36mProvider Load (0.4ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  [1m[36mCACHE Provider Load (0.0ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  [1m[36mProvider Load (0.4ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  [1m[36mCACHE Provider Load (0.0ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  [1m[36mProvider Load (1.0ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  Rendered products/index.html.erb within layouts/application (44.6ms)
+  Rendered shared/_navbar.html.erb (2.7ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 201ms (Views: 188.3ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/products.xlsx" for ::1 at 2020-03-20 09:18:30 -0300
+Processing by ProductsController#index as 
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:35
+  [1m[36mProvider Load (0.5ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  [1m[36mCACHE Provider Load (0.0ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  [1m[36mProvider Load (0.4ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  [1m[36mCACHE Provider Load (0.0ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  [1m[36mProvider Load (0.4ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  Rendered products/index.html.erb within layouts/application (17.0ms)
+  Rendered shared/_navbar.html.erb (2.2ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 297ms (Views: 169.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/products.xlsx" for ::1 at 2020-03-20 09:21:13 -0300
+Processing by ProductsController#index as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 6.0ms)
+
+
+  
+NoMethodError (To respond to a custom format, register it as a MIME type first: http://guides.rubyonrails.org/action_controller_overview.html#restful-downloads. If you meant to respond to a variant like :tablet or :phone, not a custom format, be sure to nest your variant response within a format response: format.html { |html| html.tablet { ... } }):
+  
+app/controllers/products_controller.rb:10:in `block in index'
+app/controllers/products_controller.rb:9:in `index'
+Started GET "/products.xlsx" for ::1 at 2020-03-20 09:26:16 -0300
+Processing by ProductsController#index as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (To respond to a custom format, register it as a MIME type first: http://guides.rubyonrails.org/action_controller_overview.html#restful-downloads. If you meant to respond to a variant like :tablet or :phone, not a custom format, be sure to nest your variant response within a format response: format.html { |html| html.tablet { ... } }):
+  
+app/controllers/products_controller.rb:10:in `block in index'
+app/controllers/products_controller.rb:9:in `index'
+Started GET "/products.xlsx" for ::1 at 2020-03-20 09:26:17 -0300
+Processing by ProductsController#index as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (To respond to a custom format, register it as a MIME type first: http://guides.rubyonrails.org/action_controller_overview.html#restful-downloads. If you meant to respond to a variant like :tablet or :phone, not a custom format, be sure to nest your variant response within a format response: format.html { |html| html.tablet { ... } }):
+  
+app/controllers/products_controller.rb:10:in `block in index'
+app/controllers/products_controller.rb:9:in `index'
+Started GET "/products.xlsx" for ::1 at 2020-03-20 09:28:27 -0300
+Processing by ProductsController#index as 
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 5.9ms)
+
+
+  
+NoMethodError (To respond to a custom format, register it as a MIME type first: http://guides.rubyonrails.org/action_controller_overview.html#restful-downloads. If you meant to respond to a variant like :tablet or :phone, not a custom format, be sure to nest your variant response within a format response: format.html { |html| html.tablet { ... } }):
+  
+app/controllers/products_controller.rb:10:in `block in index'
+app/controllers/products_controller.rb:9:in `index'
+Started GET "/products" for ::1 at 2020-03-20 09:28:31 -0300
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (To respond to a custom format, register it as a MIME type first: http://guides.rubyonrails.org/action_controller_overview.html#restful-downloads. If you meant to respond to a variant like :tablet or :phone, not a custom format, be sure to nest your variant response within a format response: format.html { |html| html.tablet { ... } }):
+  
+app/controllers/products_controller.rb:10:in `block in index'
+app/controllers/products_controller.rb:9:in `index'
+Started GET "/products" for ::1 at 2020-03-20 09:28:33 -0300
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (To respond to a custom format, register it as a MIME type first: http://guides.rubyonrails.org/action_controller_overview.html#restful-downloads. If you meant to respond to a variant like :tablet or :phone, not a custom format, be sure to nest your variant response within a format response: format.html { |html| html.tablet { ... } }):
+  
+app/controllers/products_controller.rb:10:in `block in index'
+app/controllers/products_controller.rb:9:in `index'
+Started GET "/products" for ::1 at 2020-03-20 09:28:47 -0300
+  
+SyntaxError (/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:14: syntax error, unexpected tSTRING_DEND, expecting end
+      }
+      ^
+/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:15: syntax error, unexpected tSTRING_DEND, expecting '}'
+...  format.html { render :index }
+...                              ^
+/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:41: syntax error, unexpected tSTRING_DEND, expecting '}'
+...ct was successfully created.' }
+...                              ^
+/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:42: syntax error, unexpected tSTRING_DEND, expecting '}'
+... :created, location: @product }
+...                              ^
+/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:44: syntax error, unexpected tSTRING_DEND, expecting '}'
+...    format.html { render :new }
+...                              ^
+/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:45: syntax error, unexpected tSTRING_DEND, expecting '}'
+...status: :unprocessable_entity }
+...                              ^
+/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:55: syntax error, unexpected tSTRING_DEND, expecting '}'
+...ct was successfully updated.' }
+...                              ^
+/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:56: syntax error, unexpected tSTRING_DEND, expecting '}'
+...atus: :ok, location: @product }
+...                              ^
+/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:58: syntax error, unexpected tSTRING_DEND, expecting '}'
+...   format.html { render :edit }
+...                              ^
+/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:59: syntax error, unexpected tSTRING_DEND, expecting '}'
+...status: :unprocessable_entity }
+...                              ^
+/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:69: syntax error, unexpected tSTRING_DEND, expecting '}'
+... was successfully destroyed.' }
+...                              ^
+/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:70: syntax error, unexpected tSTRING_DEND, expecting '}'
+...ormat.json { head :no_content }
+...                              ^
+/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:84: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/products_controller.rb:14: syntax error, unexpected tSTRING_DEND, expecting end
+app/controllers/products_controller.rb:15: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/products_controller.rb:41: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/products_controller.rb:42: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/products_controller.rb:44: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/products_controller.rb:45: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/products_controller.rb:55: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/products_controller.rb:56: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/products_controller.rb:58: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/products_controller.rb:59: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/products_controller.rb:69: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/products_controller.rb:70: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/products_controller.rb:84: syntax error, unexpected end-of-input, expecting end
+Started GET "/products" for ::1 at 2020-03-20 09:28:58 -0300
+  
+SyntaxError (/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:78: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/products_controller.rb:78: syntax error, unexpected end, expecting end-of-input
+Started GET "/products" for ::1 at 2020-03-20 09:29:04 -0300
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:35
+  [1m[36mProvider Load (0.2ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  [1m[36mCACHE Provider Load (0.0ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  [1m[36mProvider Load (0.3ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  [1m[36mCACHE Provider Load (0.0ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  [1m[36mProvider Load (0.3ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  Rendered products/index.html.erb within layouts/application (56.8ms)
+  Rendered shared/_navbar.html.erb (1.8ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 223ms (Views: 177.3ms | ActiveRecord: 18.3ms)
+
+
+Started GET "/products.xlsx" for ::1 at 2020-03-20 09:29:06 -0300
+Processing by ProductsController#index as 
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:35
+  [1m[36mProvider Load (0.6ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  [1m[36mCACHE Provider Load (0.0ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  [1m[36mProvider Load (0.4ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  [1m[36mCACHE Provider Load (0.0ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  [1m[36mProvider Load (0.3ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  Rendered products/index.html.erb within layouts/application (14.6ms)
+  Rendered shared/_navbar.html.erb (1.8ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 117ms (Views: 106.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/products" for ::1 at 2020-03-20 09:30:47 -0300
+  
+SyntaxError (/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:14: syntax error, unexpected tSTRING_DEND, expecting end
+      }
+      ^
+/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:15: syntax error, unexpected tSTRING_DEND, expecting '}'
+...  format.html { render :index }
+...                              ^
+/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:41: syntax error, unexpected tSTRING_DEND, expecting '}'
+...ct was successfully created.' }
+...                              ^
+/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:42: syntax error, unexpected tSTRING_DEND, expecting '}'
+... :created, location: @product }
+...                              ^
+/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:44: syntax error, unexpected tSTRING_DEND, expecting '}'
+...    format.html { render :new }
+...                              ^
+/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:45: syntax error, unexpected tSTRING_DEND, expecting '}'
+...status: :unprocessable_entity }
+...                              ^
+/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:55: syntax error, unexpected tSTRING_DEND, expecting '}'
+...ct was successfully updated.' }
+...                              ^
+/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:56: syntax error, unexpected tSTRING_DEND, expecting '}'
+...atus: :ok, location: @product }
+...                              ^
+/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:58: syntax error, unexpected tSTRING_DEND, expecting '}'
+...   format.html { render :edit }
+...                              ^
+/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:59: syntax error, unexpected tSTRING_DEND, expecting '}'
+...status: :unprocessable_entity }
+...                              ^
+/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:69: syntax error, unexpected tSTRING_DEND, expecting '}'
+... was successfully destroyed.' }
+...                              ^
+/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:70: syntax error, unexpected tSTRING_DEND, expecting '}'
+...ormat.json { head :no_content }
+...                              ^
+/home/bazt/Escritorio/project/wms/app/controllers/products_controller.rb:84: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/products_controller.rb:14: syntax error, unexpected tSTRING_DEND, expecting end
+app/controllers/products_controller.rb:15: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/products_controller.rb:41: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/products_controller.rb:42: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/products_controller.rb:44: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/products_controller.rb:45: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/products_controller.rb:55: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/products_controller.rb:56: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/products_controller.rb:58: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/products_controller.rb:59: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/products_controller.rb:69: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/products_controller.rb:70: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/products_controller.rb:84: syntax error, unexpected end-of-input, expecting end
+Started GET "/products" for ::1 at 2020-03-20 09:31:05 -0300
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 6.1ms)
+
+
+  
+NoMethodError (To respond to a custom format, register it as a MIME type first: http://guides.rubyonrails.org/action_controller_overview.html#restful-downloads. If you meant to respond to a variant like :tablet or :phone, not a custom format, be sure to nest your variant response within a format response: format.html { |html| html.tablet { ... } }):
+  
+app/controllers/products_controller.rb:10:in `block in index'
+app/controllers/products_controller.rb:9:in `index'
+Started GET "/products" for ::1 at 2020-03-20 09:31:36 -0300
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (To respond to a custom format, register it as a MIME type first: http://guides.rubyonrails.org/action_controller_overview.html#restful-downloads. If you meant to respond to a variant like :tablet or :phone, not a custom format, be sure to nest your variant response within a format response: format.html { |html| html.tablet { ... } }):
+  
+app/controllers/products_controller.rb:10:in `block in index'
+app/controllers/products_controller.rb:9:in `index'
+Started GET "/products" for ::1 at 2020-03-20 09:31:37 -0300
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (To respond to a custom format, register it as a MIME type first: http://guides.rubyonrails.org/action_controller_overview.html#restful-downloads. If you meant to respond to a variant like :tablet or :phone, not a custom format, be sure to nest your variant response within a format response: format.html { |html| html.tablet { ... } }):
+  
+app/controllers/products_controller.rb:10:in `block in index'
+app/controllers/products_controller.rb:9:in `index'
+Started PUT "/__web_console/repl_sessions/e6c03b1bffab0173a5d98f565c3aed35" for ::1 at 2020-03-20 09:31:40 -0300
+Started PUT "/__web_console/repl_sessions/e6c03b1bffab0173a5d98f565c3aed35" for ::1 at 2020-03-20 09:31:40 -0300
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/bazt/.rvm/rubies/ruby-2.6.4/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/bazt/.rvm/rubies/ruby-2.6.4/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+Started PUT "/__web_console/repl_sessions/e6c03b1bffab0173a5d98f565c3aed35" for ::1 at 2020-03-20 09:31:45 -0300
+Started GET "/" for ::1 at 2020-03-20 09:40:33 -0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+  Rendered shared/_navbar.html.erb (2.4ms)
+  Rendered shared/_footer.html.erb (1.1ms)
+Completed 200 OK in 151ms (Views: 117.7ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/events.json?start=2020-02-24&end=2020-04-06&_=1584708033543" for ::1 at 2020-03-20 09:40:33 -0300
+Processing by EventsController#index as JSON
+  Parameters: {"start"=>"2020-02-24", "end"=>"2020-04-06", "_"=>"1584708033543"}
+  Rendering events/index.json.jbuilder
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.json.jbuilder:1
+  Rendered events/_event.json.jbuilder (1.9ms)
+  Rendered events/index.json.jbuilder (21.6ms)
+Completed 200 OK in 32ms (Views: 20.4ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/products" for ::1 at 2020-03-20 09:40:37 -0300
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:35
+  [1m[36mProvider Load (0.3ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  [1m[36mCACHE Provider Load (0.0ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  [1m[36mProvider Load (0.3ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  [1m[36mCACHE Provider Load (0.0ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  [1m[36mProvider Load (0.3ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  Rendered products/index.html.erb within layouts/application (39.2ms)
+  Rendered shared/_navbar.html.erb (1.5ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 144ms (Views: 120.5ms | ActiveRecord: 7.6ms)
+
+
+Started DELETE "/products/7" for ::1 at 2020-03-20 09:40:40 -0300
+Processing by ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YKkO+H78e5TXwHRnrAB2Gg8a9YrBd8S0ps76mH3UFYTGD6ZpYvY3vWe6R9aNfADLGYCUi5CSsSy/jQQ8tD0KxQ==", "id"=>"7"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:69
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:59
+  [1m[36mProduct::HABTM_StockByLocations Destroy (273.6ms)[0m  [1m[31mDELETE FROM "products_stock_by_locations" WHERE "products_stock_by_locations"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/products_controller.rb:59
+  [1m[36mProduct::HABTM_Clients Destroy (0.3ms)[0m  [1m[31mDELETE FROM "clients_products" WHERE "clients_products"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/products_controller.rb:59
+  [1m[36mProduct Destroy (1.3ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/products_controller.rb:59
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/products_controller.rb:59
+Completed 500 Internal Server Error in 851ms (ActiveRecord: 279.4ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (PG::ForeignKeyViolation: ERROR:  update or delete on table "products" violates foreign key constraint "fk_rails_ea63b781b6" on table "details_purchase_orders"
+DETAIL:  Key (id)=(7) is still referenced from table "details_purchase_orders".
+: DELETE FROM "products" WHERE "products"."id" = $1):
+  
+app/controllers/products_controller.rb:59:in `destroy'
+Started DELETE "/products/9" for ::1 at 2020-03-20 09:40:54 -0300
+Processing by ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YKkO+H78e5TXwHRnrAB2Gg8a9YrBd8S0ps76mH3UFYTGD6ZpYvY3vWe6R9aNfADLGYCUi5CSsSy/jQQ8tD0KxQ==", "id"=>"9"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:69
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:59
+  [1m[36mProduct::HABTM_StockByLocations Destroy (0.5ms)[0m  [1m[31mDELETE FROM "products_stock_by_locations" WHERE "products_stock_by_locations"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/products_controller.rb:59
+  [1m[36mProduct::HABTM_Clients Destroy (0.4ms)[0m  [1m[31mDELETE FROM "clients_products" WHERE "clients_products"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/products_controller.rb:59
+  [1m[36mProduct Destroy (124.2ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 9]]
+  ↳ app/controllers/products_controller.rb:59
+  [1m[35m (1483.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:59
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:59
+Redirected to http://localhost:3000/products
+Completed 302 Found in 1631ms (ActiveRecord: 1612.3ms)
+
+
+Started GET "/products" for ::1 at 2020-03-20 09:40:55 -0300
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:35
+  [1m[36mProvider Load (0.4ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  [1m[36mCACHE Provider Load (0.0ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  [1m[36mCACHE Provider Load (0.0ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  [1m[36mProvider Load (0.4ms)[0m  [1m[34mSELECT  "providers".* FROM "providers" WHERE "providers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/product.rb:8
+  Rendered products/index.html.erb within layouts/application (11.5ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 72ms (Views: 67.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-20 10:31:36 -0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+  Rendered shared/_navbar.html.erb (1.5ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 69ms (Views: 65.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events.json?start=2020-02-24&end=2020-04-06&_=1584711097270" for ::1 at 2020-03-20 10:31:37 -0300
+Processing by EventsController#index as JSON
+  Parameters: {"start"=>"2020-02-24", "end"=>"2020-04-06", "_"=>"1584711097270"}
+  Rendering events/index.json.jbuilder
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.json.jbuilder:1
+  Rendered events/_event.json.jbuilder (1.5ms)
+  Rendered events/index.json.jbuilder (4.4ms)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-03-20 10:31:38 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vBEakgNQHoWe47fYp+rr802PMhcAKgLIVD6awsNaDgQat7IDH1pSrC6ZhGmGlp0iWxVTFlHPd1BNfWRmCrMRRQ=="}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 32ms (ActiveRecord: 10.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-20 10:31:38 -0300
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-03-20 10:31:38 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.7ms)
+  Rendered shared/_navbar.html.erb (1.6ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 107ms (Views: 105.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-20 10:31:44 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/bazt/.rvm/gems/ruby-2.6.4/gems/devise-4.7.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.2ms)
+  Rendered devise/shared/_links.html.erb (2.3ms)
+  Rendered /home/bazt/.rvm/gems/ruby-2.6.4/gems/devise-4.7.1/app/views/devise/registrations/new.html.erb within layouts/application (9.5ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 74ms (Views: 72.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-20 12:09:20 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/bazt/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-03-20 12:09:21 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.2ms)
+  Rendered shared/_navbar.html.erb (2.8ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 724ms (Views: 702.6ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-03-20 12:11:10 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.8ms)
+  Rendered shared/_navbar.html.erb (2.2ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 148ms (Views: 146.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-03-20 12:11:12 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.2ms)
+  Rendered shared/_navbar.html.erb (1.7ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 94ms (Views: 92.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-03-20 12:12:18 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.2ms)
+  Rendered shared/_navbar.html.erb (2.0ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 97ms (Views: 94.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-03-20 12:12:46 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.4ms)
+  Rendered shared/_navbar.html.erb (2.0ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 100ms (Views: 98.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-03-20 12:13:02 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.4ms)
+  Rendered shared/_navbar.html.erb (2.3ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 98ms (Views: 95.6ms | ActiveRecord: 0.0ms)
+
+

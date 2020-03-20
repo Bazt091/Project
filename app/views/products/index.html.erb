@@ -6,7 +6,16 @@
     <%= text_field_tag :search, params[:search]%>
     <%= submit_tag "search"%>
     <% end %>
+  
 <br>
+
+    <%=
+      link_to 'Download as Excel',
+      products_path(format: :xlsx)
+    %>
+
+<br>
+
 
 <table>
   <thead>
